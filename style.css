@@ -1,0 +1,276 @@
+/*
+  Premium minimalist theme tokens.
+  You can customize colors quickly by editing these variables.
+*/
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --text: #111214;
+  --muted: #59606b;
+  --line: #e3e7ee;
+  --accent: #627086;
+  --accent-strong: #4e5d73;
+  --shadow-soft: 0 12px 28px rgba(18, 24, 40, 0.06);
+}
+
+/* Dark mode palette, toggled by script.js */
+body.dark {
+  --bg: #0f1218;
+  --surface: #151a23;
+  --text: #ebeff7;
+  --muted: #adb6c4;
+  --line: #2a3242;
+  --accent: #8b98ad;
+  --accent-strong: #a7b2c4;
+  --shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.container {
+  width: min(1080px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: color 0.22s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.hero {
+  padding: 7.2rem 0 4.4rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4.8vw, 3.45rem);
+  line-height: 1.13;
+  max-width: 940px;
+}
+
+.hero-text {
+  color: var(--muted);
+  margin-top: 1.2rem;
+  max-width: 760px;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.72rem 1.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--text);
+  color: var(--surface);
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.section h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.section p,
+.section li {
+  color: var(--muted);
+}
+
+.card-grid,
+.education-grid,
+.skills-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.edu-card,
+.skills-card,
+.timeline-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.15rem;
+  background: color-mix(in srgb, var(--surface) 94%, var(--bg));
+  transition: transform 0.24s ease, border-color 0.24s ease;
+}
+
+.card:hover,
+.edu-card:hover,
+.skills-card:hover,
+.timeline-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.card h3,
+.edu-card h3,
+.skills-card h3,
+.timeline-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.55rem;
+}
+
+.skills-card ul {
+  margin-left: 1rem;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.contact-card a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 2.2rem 1rem;
+}
+
+/* Back-to-top visibility controlled by script.js */
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 920px) {
+  .nav-wrap {
+    flex-wrap: wrap;
+    padding: 0.75rem 0;
+  }
+
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .card-grid,
+  .education-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 1.45rem;
+  }
+}
