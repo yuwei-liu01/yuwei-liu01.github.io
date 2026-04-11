@@ -1,24 +1,28 @@
-// Theme toggle + saved preference
+// Theme toggle with dark default and persistent user choice
 const themeToggle = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
 
-if (savedTheme === 'dark') {
-  document.body.classList.add('dark');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+  themeToggle.textContent = '☾';
+} else {
+  // Default is dark
+  document.body.classList.remove('light');
   themeToggle.textContent = '☀';
 }
 
 themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  themeToggle.textContent = isDark ? '☀' : '☾';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+  themeToggle.textContent = isLight ? '☾' : '☀';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
 
 // Back-to-top button behavior
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 450) {
+  if (window.scrollY > 420) {
     backToTopButton.classList.add('show');
   } else {
     backToTopButton.classList.remove('show');
