@@ -3,61 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuwei Liu | Personal Website</title>
+  <title>Yuwei Liu | Portfolio</title>
+  <meta name="description" content="Yuwei Liu portfolio - robotics, medical robotics, haptics, and human-robot interaction." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <h1>Yuwei Liu</h1>
-    <p class="subtitle">M.S. Student in Mechanical Engineering at Johns Hopkins University</p>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Premium, minimal sticky navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#hero">Yuwei Liu</a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#publication">Publication</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- This id is used by script.js -->
+      <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark and light mode">☾</button>
+    </div>
   </header>
 
   <main>
-    <section id="home" class="section">
-      <h2>Home</h2>
-      <p>
-        Welcome! I am Yuwei Liu, a master's student in Mechanical Engineering at Johns Hopkins University,
-        focused on building robotics systems that can improve human health and quality of life.
+    <!-- Hero -->
+    <section id="hero" class="hero container">
+      <p class="eyebrow">M.S. in Mechanical Engineering (Robotics) · Johns Hopkins University</p>
+      <h1>Engineering human-centered robotics with precision, clarity, and purpose.</h1>
+      <p class="hero-text">
+        I am Yuwei Liu, a robotics-focused graduate student with a foundation in architecture.
+        My work connects robotics, medical robotics, haptics, human-robot interaction,
+        control, motion planning, and computational design.
       </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="#contact">Contact</a>
+      </div>
     </section>
 
-    <section id="about" class="section">
+    <!-- About -->
+    <section id="about" class="section container">
       <h2>About</h2>
       <p>
-        My background is in architecture, where I learned to think about space, people, and design in a
-        human-centered way. Now, I apply that perspective to engineering and robotics research.
+        My journey began in architecture at Wuhan University of Science and Technology,
+        where I developed human-centered design thinking, spatial reasoning, and computational design habits.
       </p>
       <p>
-        I am especially interested in robotics, medical robotics, and human-robot interaction.
+        I transitioned into mechanical engineering and robotics at Johns Hopkins University,
+        bringing that design mindset into technical work in robotics, medical robotics, haptics,
+        human-robot interaction, control, and motion planning.
       </p>
     </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Medical Robotics Concepts:</strong> Exploring robot-assisted systems for healthcare tasks.</li>
-        <li><strong>Human-Robot Interaction Studies:</strong> Designing safer and more intuitive robot behavior.</li>
-        <li><strong>Architecture to Engineering Design:</strong> Translating spatial design thinking into robotics workflows.</li>
-      </ul>
+    <!-- Featured Projects -->
+    <section id="projects" class="section container">
+      <h2>Featured Projects</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Robot Kinematics, Motion Planning and Control</h3>
+          <p>Studied robotic kinematics and built practical workflows for planning trajectories and applying control strategies.</p>
+          <p><strong>Tools / Skills:</strong> Kinematics, Motion Planning, Control</p>
+          <a href="#contact" class="card-link">View Details →</a>
+        </article>
+
+        <article class="card">
+          <h3>Haptic Force-Cepx</h3>
+          <p>Explored force-feedback interaction concepts to make robotic systems more intuitive and responsive for users.</p>
+          <p><strong>Tools / Skills:</strong> Haptics, Human-Robot Interaction, System Prototyping</p>
+          <a href="#contact" class="card-link">View Details →</a>
+        </article>
+
+        <article class="card">
+          <h3>Desktop Robotic Arm Fabrication Practice</h3>
+          <p>Completed hands-on fabrication and integration practice to understand robotic arm structure and functional assembly.</p>
+          <p><strong>Tools / Skills:</strong> Robotics Fabrication, Mechanical Integration, Testing</p>
+          <a href="#contact" class="card-link">View Details →</a>
+        </article>
+
+        <article class="card">
+          <h3>Multi-Robot Collaborative Construction</h3>
+          <p>Investigated collaborative robotic workflows for construction-focused tasks with emphasis on coordination logic.</p>
+          <p><strong>Tools / Skills:</strong> Multi-Robot Systems, Coordination, Computational Design</p>
+          <a href="#contact" class="card-link">View Details →</a>
+        </article>
+      </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- Experience -->
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+      <article class="timeline-item">
+        <h3>Central South Architectural Design Institute</h3>
+        <p>
+          Worked on architecture design tasks that required rigorous problem-solving,
+          clear communication across disciplines, and computational design thinking.
+          This experience strengthened my ability to structure complex systems and translate ideas into practical outcomes.
+        </p>
+      </article>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section container">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <article class="edu-card">
+          <h3>Johns Hopkins University</h3>
+          <p>M.S. in Mechanical Engineering</p>
+          <p>Concentration: Robotics</p>
+        </article>
+        <article class="edu-card">
+          <h3>Wuhan University of Science and Technology</h3>
+          <p>B.Eng. in Architecture</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <article class="skills-card">
+          <h3>Robotics & Engineering</h3>
+          <ul>
+            <li>Robotics</li>
+            <li>Medical Robotics</li>
+            <li>Haptics</li>
+            <li>Human-Robot Interaction</li>
+            <li>Control</li>
+            <li>Motion Planning</li>
+          </ul>
+        </article>
+
+        <article class="skills-card">
+          <h3>Design & Modeling</h3>
+          <ul>
+            <li>Computational Design</li>
+            <li>Human-Centered Design Thinking</li>
+            <li>Cross-Disciplinary Problem Solving</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Publication / Achievement -->
+    <section id="publication" class="section container">
+      <h2>Publication / Achievement</h2>
+      <p>Third Prize publication / award.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container contact-card">
       <h2>Contact</h2>
-      <p>If you'd like to connect, feel free to reach out.</p>
-      <p>Email: yuwei.liu@jhu.edu</p>
+      <p>Email: <a href="mailto:yuwei.liu@jhu.edu">yuwei.liu@jhu.edu</a></p>
+      <p>LinkedIn: <a href="#" aria-label="LinkedIn profile link placeholder">Add your LinkedIn URL</a></p>
+      <p>GitHub: <a href="#" aria-label="GitHub profile link placeholder">Add your GitHub URL</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Yuwei Liu</p>
   </footer>
+
+  <!-- This id is used by script.js -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
