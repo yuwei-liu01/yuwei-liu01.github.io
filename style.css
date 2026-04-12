@@ -1,0 +1,351 @@
+/*
+  Academic portfolio theme tokens.
+  Dark theme is default. Light theme activates with body.light.
+*/
+:root {
+  --bg: #07090d;
+  --surface: #0d1117;
+  --surface-2: #101722;
+  --text: #e6ebf3;
+  --muted: #a8b0bd;
+  --line: #1c2532;
+  --accent: #5f8db8;
+  --accent-soft: #89a9c8;
+  --shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+body.light {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface-2: #f7f9fc;
+  --text: #141a24;
+  --muted: #5f6978;
+  --line: #d8dee8;
+  --accent: #3f6e99;
+  --accent-soft: #5c84ab;
+  --shadow: 0 8px 20px rgba(15, 30, 50, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.hero {
+  padding: 6.6rem 0 3.8rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.eyebrow {
+  color: var(--accent-soft);
+  font-size: 0.88rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.subtitle {
+  color: var(--accent-soft);
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+.hero-text {
+  margin-top: 1.1rem;
+  color: var(--muted);
+  max-width: 690px;
+}
+
+.hero-text p {
+  text-align: justify;
+  line-height: 1.9;
+}
+
+.hero-text p + p {
+  margin-top: 1rem;
+}
+
+/* Intro links: subtle, elegant, clearly clickable */
+.hero-text a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.hero-text a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.profile-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-placeholder {
+  min-height: 320px;
+  border-radius: 10px;
+  border: 1px dashed var(--line);
+  background: var(--surface-2);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.profile-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.icon-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-2) 80%, var(--bg));
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-link:hover {
+  color: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  transform: translateY(-1px);
+}
+
+.section {
+  margin-top: 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1.95rem;
+}
+
+.section h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.section p,
+.section li {
+  color: var(--muted);
+}
+
+.card-grid,
+.education-grid,
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.edu-card,
+.skills-card,
+.timeline-item,
+.pub-card {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.15rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover,
+.edu-card:hover,
+.skills-card:hover,
+.timeline-item:hover,
+.pub-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+}
+
+.card-image {
+  height: 155px;
+  border-radius: 8px;
+  border: 1px dashed var(--line);
+  background: color-mix(in srgb, var(--surface-2) 82%, var(--bg));
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.card h3,
+.edu-card h3,
+.skills-card h3,
+.timeline-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.55rem;
+}
+
+.card p + p {
+  margin-top: 0.5rem;
+}
+
+.skills-card ul {
+  margin-left: 1rem;
+}
+
+.card-link,
+.contact-card a {
+  color: var(--accent-soft);
+  text-decoration: none;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 960px) {
+  .nav-wrap {
+    flex-wrap: wrap;
+    padding: 0.7rem 0;
+  }
+
+  .hero {
+    padding-top: 4.9rem;
+  }
+
+  .hero-grid,
+  .card-grid,
+  .education-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-placeholder {
+    min-height: 250px;
+  }
+
+  .section {
+    padding: 1.35rem;
+  }
+}
