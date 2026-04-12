@@ -327,6 +327,10 @@ li strong {
   border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
 }
 
+.pub-card + .pub-card {
+  margin-top: 0.8rem;
+}
+
 .card-image {
   aspect-ratio: 16 / 9;
   border-radius: 8px;
