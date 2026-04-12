@@ -144,6 +144,18 @@ body {
   margin-top: 1rem;
 }
 
+.opportunity-note {
+  margin-top: 1.15rem;
+  color: var(--text);
+  padding-left: 0.85rem;
+  border-left: 2px solid color-mix(in srgb, var(--accent-soft) 70%, var(--line));
+}
+
+.opportunity-note strong {
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
 /* Intro links: subtle, elegant, clearly clickable */
 .hero-text a {
   color: var(--accent-soft);
