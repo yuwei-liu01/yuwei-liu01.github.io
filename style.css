@@ -146,7 +146,7 @@ body {
 
 .opportunity-note {
   margin-top: 1.15rem;
-  color: var(--text);
+  color: #ffffff;
   padding-left: 0.85rem;
   border-left: 2px solid color-mix(in srgb, var(--accent-soft) 70%, var(--line));
 }
@@ -154,6 +154,7 @@ body {
 .opportunity-note strong {
   font-weight: 600;
   letter-spacing: 0.005em;
+  color: #ffffff;
 }
 
 /* Intro links: subtle, elegant, clearly clickable */
