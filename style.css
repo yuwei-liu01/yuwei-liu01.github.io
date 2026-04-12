@@ -177,7 +177,7 @@ body {
   width: min(100%, 352px);
   justify-self: end;
   align-self: start;
-  margin-top: 5.3rem;
+  margin-top: 7rem;
   padding: 0.84rem 1.04rem 0.95rem 0.84rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
   display: flex;
