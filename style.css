@@ -180,6 +180,16 @@ body {
   font-size: 0.95rem;
 }
 
+.profile-image {
+  width: min(100%, 280px);
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  background: var(--surface-2);
+  align-self: center;
+}
+
 .profile-links {
   margin-top: 1rem;
   display: flex;
