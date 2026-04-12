@@ -228,6 +228,11 @@ body {
   color: var(--muted);
 }
 
+.section-intro {
+  margin-bottom: 1rem;
+  max-width: 760px;
+}
+
 .card-grid,
 .education-grid,
 .skills-grid {
