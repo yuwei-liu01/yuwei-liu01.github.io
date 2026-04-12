@@ -162,13 +162,13 @@ body {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 1.05rem 1.05rem 1.2rem;
+  padding: 1rem 1rem 1.35rem;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.95rem;
+  gap: 1rem;
 }
 
 .profile-media {
@@ -177,7 +177,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  padding: 0.45rem;
+  padding: 0.5rem;
   background: color-mix(in srgb, var(--surface-2) 82%, var(--bg));
 }
 
@@ -193,9 +193,9 @@ body {
 }
 
 .profile-image {
-  width: min(100%, 355px);
-  max-height: 510px;
-  aspect-ratio: 4 / 5;
+  width: min(100%, 318px);
+  aspect-ratio: 2 / 3;
+  max-height: 560px;
   border-radius: 10px;
   border: 1px solid var(--line);
   object-fit: cover;
@@ -205,7 +205,7 @@ body {
 }
 
 .profile-links {
-  margin-top: 0.42rem;
+  margin-top: 0.56rem;
   display: flex;
   gap: 0.82rem;
   flex-wrap: wrap;
@@ -392,12 +392,12 @@ body {
   .profile-panel {
     max-width: 440px;
     margin: 0 auto;
-    padding: 0.95rem 0.95rem 1.1rem;
+    padding: 0.9rem 0.9rem 1.2rem;
   }
 
   .profile-image {
-    width: min(100%, 330px);
-    max-height: 470px;
+    width: min(100%, 300px);
+    max-height: 500px;
   }
 
   .section {
