@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Robot kinematics, motion planning, and control project details." />
+  <title>Robot Kinematics, Motion Planning and Control | Yuwei Liu</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="dark">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../index.html" class="brand">Yuwei Liu</a>
+      <nav aria-label="Project navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark and light mode">☀</button>
+    </div>
+  </header>
+
+  <main class="container project-page">
+    <section class="section">
+      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+      <h1>Robot Kinematics, Motion Planning and Control</h1>
+      <p class="project-overview">
+        This project focuses on building a practical robotics workflow from model-based kinematics to trajectory generation and closed-loop control.
+        The work emphasizes stable motion quality, controllability, and reproducible simulation-based validation.
+      </p>
+
+      <h2>Project Goal</h2>
+      <p>
+        Develop a reliable pipeline for robot motion tasks by combining forward/inverse kinematics, collision-aware path generation,
+        and controller tuning so that the manipulator can execute target trajectories safely and smoothly.
+      </p>
+
+      <h2>What I Did / My Contribution</h2>
+      <ul>
+        <li>Formulated the robot kinematic model and validated workspace reachability.</li>
+        <li>Implemented trajectory generation experiments and compared path smoothness metrics.</li>
+        <li>Tested controller gains under different motion speeds and disturbance conditions.</li>
+        <li>Documented the full experiment setup to support future extension and team reuse.</li>
+      </ul>
+
+      <h2>Methods / Workflow</h2>
+      <ol>
+        <li>Build and verify kinematic chain assumptions and joint limits.</li>
+        <li>Generate target waypoints and plan feasible joint-space or Cartesian trajectories.</li>
+        <li>Apply control strategy and tune parameters with simulation feedback.</li>
+        <li>Evaluate tracking error, smoothness, and robustness, then iterate.</li>
+      </ol>
+
+      <h2>Images / Videos / Simulation</h2>
+      <div class="media-placeholder" role="img" aria-label="Simulation and experiment media placeholder">
+        Add simulation snapshots, control plots, or demo video here.
+      </div>
+
+      <h2>Results / Takeaways</h2>
+      <p>
+        The final workflow improved trajectory consistency and provided a clear baseline for future integration with perception and higher-level task planning.
+        The biggest takeaway was that early model validation and structured tuning significantly reduce downstream debugging time.
+      </p>
+
+      <h2>Tools / Skills</h2>
+      <p>Kinematics, Motion Planning, Robot Control, Simulation, Parameter Tuning, Debugging</p>
+
+      <h2>Optional Links</h2>
+      <ul>
+        <li><a href="#" aria-label="Optional repository link placeholder">Repository link placeholder</a></li>
+        <li><a href="#" aria-label="Optional demo video link placeholder">Demo video placeholder</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Yuwei Liu</p>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="../script.js"></script>
+</body>
+</html>
