@@ -162,11 +162,23 @@ body {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 1.1rem;
+  padding: 0.8rem;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.profile-media {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-placeholder {
@@ -181,20 +193,23 @@ body {
 }
 
 .profile-image {
-  width: min(100%, 280px);
-  aspect-ratio: 3 / 4;
+  width: clamp(250px, 24vw, 320px);
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
   border: 1px solid var(--line);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   background: var(--surface-2);
-  align-self: center;
+  display: block;
 }
 
 .profile-links {
-  margin-top: 1rem;
+  margin-top: 0.25rem;
   display: flex;
   gap: 0.65rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .icon-link {
@@ -358,6 +373,15 @@ body {
 
   .profile-placeholder {
     min-height: 250px;
+  }
+
+  .profile-panel {
+    width: min(100%, 360px);
+    margin: 0 auto;
+  }
+
+  .profile-image {
+    width: min(100%, 300px);
   }
 
   .section {
