@@ -375,6 +375,14 @@ li strong {
   margin-top: 0.5rem;
 }
 
+.card > p:first-of-type {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.66;
+  margin-bottom: 0.6rem;
+  hyphens: auto;
+}
+
 .skills-card ul {
   margin-left: 1rem;
 }
@@ -449,6 +457,10 @@ li strong {
   .profile-image {
     width: min(100%, 312px);
     max-height: 460px;
+  }
+
+  .card > p:first-of-type {
+    line-height: 1.72;
   }
 
   .section {
