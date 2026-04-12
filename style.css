@@ -7,6 +7,7 @@
   --surface: #0d1117;
   --surface-2: #101722;
   --text: #e6ebf3;
+  --text-strong: #c3ccda;
   --muted: #a8b0bd;
   --line: #1c2532;
   --accent: #5f8db8;
@@ -19,6 +20,7 @@ body.light {
   --surface: #ffffff;
   --surface-2: #f7f9fc;
   --text: #141a24;
+  --text-strong: #465264;
   --muted: #5f6978;
   --line: #d8dee8;
   --accent: #3f6e99;
@@ -146,13 +148,13 @@ body {
 
 .opportunity-note {
   margin-top: 1.15rem;
-  color: #ffffff;
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
   padding-left: 0.85rem;
   border-left: 2px solid color-mix(in srgb, var(--accent-soft) 70%, var(--line));
 }
 
 .opportunity-note strong {
-  font-weight: 600;
+  font-weight: 620;
   letter-spacing: 0.005em;
   color: #ffffff;
 }
@@ -283,6 +285,12 @@ body {
 .section p,
 .section li {
   color: var(--muted);
+}
+
+p strong,
+li strong {
+  color: var(--text-strong);
+  font-weight: 600;
 }
 
 .section-intro {
