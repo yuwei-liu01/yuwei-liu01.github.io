@@ -108,7 +108,7 @@ body {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
-  gap: 1.4rem;
+  gap: 1.15rem;
   align-items: stretch;
 }
 
@@ -174,15 +174,17 @@ body {
   background: var(--surface);
   border: 1px solid color-mix(in srgb, var(--line) 88%, #000000 12%);
   border-radius: 14px;
-  width: min(100%, 336px);
+  width: min(100%, 352px);
   justify-self: end;
-  padding: 0.84rem 0.84rem 1.1rem;
+  align-self: start;
+  margin-top: 5.3rem;
+  padding: 0.84rem 1.04rem 0.95rem 0.84rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.86rem;
+  gap: 0.74rem;
 }
 
 .profile-media {
@@ -216,11 +218,11 @@ body {
   object-position: center;
   background: var(--surface-2);
   display: block;
-  transform: translateX(6px);
+  transform: translateX(2px);
 }
 
 .profile-links {
-  margin-top: 0.56rem;
+  margin-top: 0.42rem;
   display: flex;
   gap: 0.82rem;
   flex-wrap: wrap;
@@ -405,9 +407,10 @@ body {
   }
 
   .profile-panel {
-    max-width: 336px;
+    max-width: 352px;
     margin: 0 auto;
-    padding: 0.84rem 0.84rem 1.1rem;
+    margin-top: 0;
+    padding: 0.84rem 1.15rem 0.84rem 0.84rem;
   }
 
   .profile-image {
