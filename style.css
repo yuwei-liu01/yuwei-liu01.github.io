@@ -178,7 +178,7 @@ body {
   justify-self: end;
   align-self: start;
   margin-top: 7rem;
-  padding: 0.84rem 1.04rem 0.95rem 0.84rem;
+  padding: 0.76rem 1.04rem 0.82rem 0.84rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
   display: flex;
   flex-direction: column;
@@ -209,9 +209,9 @@ body {
 }
 
 .profile-image {
-  width: min(100%, 318px);
-  aspect-ratio: 2 / 3;
-  max-height: 560px;
+  width: min(100%, 332px);
+  aspect-ratio: 4 / 5;
+  max-height: 500px;
   border-radius: 10px;
   border: 1px solid var(--line);
   object-fit: cover;
@@ -414,8 +414,8 @@ body {
   }
 
   .profile-image {
-    width: min(100%, 300px);
-    max-height: 500px;
+    width: min(100%, 312px);
+    max-height: 460px;
   }
 
   .section {
