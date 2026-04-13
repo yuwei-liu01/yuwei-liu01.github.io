@@ -1,4 +1,4 @@
-# Yuwei Liu Portfolio
+# Yuwei Portfolio
 
 This repository contains my personal academic portfolio website, built with HTML, CSS, and JavaScript and deployed with GitHub Pages.
 
