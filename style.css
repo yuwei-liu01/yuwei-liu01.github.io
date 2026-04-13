@@ -375,12 +375,19 @@ li strong {
   margin-top: 0.5rem;
 }
 
-.card > p:first-of-type {
+.card .project-description {
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.66;
   margin-bottom: 0.6rem;
   hyphens: auto;
+}
+
+.project-status {
+  margin-bottom: 0.4rem;
+  color: var(--text-strong);
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
 }
 
 .skills-card ul {
@@ -459,7 +466,7 @@ li strong {
     max-height: 460px;
   }
 
-  .card > p:first-of-type {
+  .card .project-description {
     line-height: 1.72;
   }
 
