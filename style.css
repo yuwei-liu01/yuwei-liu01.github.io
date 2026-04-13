@@ -233,11 +233,11 @@ body {
 }
 
 .icon-link {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface-2) 80%, var(--bg));
+  background: color-mix(in srgb, var(--surface-2) 84%, var(--bg));
   color: var(--muted);
   text-decoration: none;
   display: inline-flex;
@@ -260,12 +260,23 @@ body {
 }
 
 .icon-svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-  stroke: currentColor;
-  stroke-width: 1.5;
+  width: 19px;
+  height: 19px;
+  display: block;
   vector-effect: non-scaling-stroke;
+}
+
+.icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-fill {
+  fill: currentColor;
+  stroke: none;
 }
 
 .section {
@@ -327,6 +338,10 @@ li strong {
   border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
 }
 
+.pub-card + .pub-card {
+  margin-top: 0.8rem;
+}
+
 .card-image {
   aspect-ratio: 16 / 9;
   border-radius: 8px;
@@ -358,6 +373,14 @@ li strong {
 
 .card p + p {
   margin-top: 0.5rem;
+}
+
+.card > p:first-of-type {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.66;
+  margin-bottom: 0.6rem;
+  hyphens: auto;
 }
 
 .skills-card ul {
@@ -434,6 +457,10 @@ li strong {
   .profile-image {
     width: min(100%, 312px);
     max-height: 460px;
+  }
+
+  .card > p:first-of-type {
+    line-height: 1.72;
   }
 
   .section {
