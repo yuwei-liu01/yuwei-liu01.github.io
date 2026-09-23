@@ -230,8 +230,8 @@ body {
   object-position: center;
   background: var(--surface-2);
   display: block;
-  transform: scale(1.12);
-  transform-origin: 61% 48%;
+  transform: scale(1.28);
+  transform-origin: 68% 58%;
 }
 
 .profile-links {
