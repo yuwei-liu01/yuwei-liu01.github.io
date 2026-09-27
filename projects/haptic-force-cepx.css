@@ -1,0 +1,53 @@
+/* Project-only additions; colors, navigation, and theme behavior come from the portfolio. */
+.haptic-page { padding-top: 3rem; }
+.haptic-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 2.5rem; align-items: center; margin: 1rem 0 2.5rem; }
+.haptic-page h1 { font-size: clamp(1.85rem, 3.3vw, 2.8rem); line-height: 1.18; }
+.haptic-page .section h2 { font-size: 1.4rem; margin: 0 0 1rem; }
+.haptic-page h3 { font-size: 1rem; margin-bottom: .6rem; }
+.haptic-page .section p + p { margin-top: .8rem; }
+.haptic-tags { color: var(--accent-soft); font-size: .86rem; }
+.haptic-actions { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; margin-top: 1.3rem; }
+.haptic-actions .card-link { margin: 0; }
+.haptic-button { display: inline-block; padding: .65rem 1rem; border: 1px solid var(--accent); border-radius: 8px; color: var(--text); background: var(--surface-2); text-decoration: none; font-size: .9rem; }
+.haptic-button:hover { border-color: var(--accent-soft); background: var(--surface); }
+.haptic-page a:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
+.haptic-figure { margin-top: 1.2rem; min-width: 0; }
+.haptic-figure img { display: block; width: 100%; height: auto; border-radius: 9px; }
+.hero-figure { margin: 0; }
+.haptic-figure figcaption { font-size: .8rem; color: var(--muted); margin-top: .7rem; line-height: 1.6; }
+.haptic-figure a { color: var(--accent-soft); text-underline-offset: 3px; }
+.diagram-figure img, .result-figure img { background: white; }
+.snapshot-grid, .context-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.haptic-page dt { font-size: .8rem; color: var(--muted); margin-bottom: .35rem; }
+.haptic-page dd { font-size: .95rem; }
+.pending-inline { border: 1px dashed var(--muted); padding: .2rem .6rem; border-radius: 6px; width: fit-content; color: var(--muted); }
+.haptic-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.7rem; }
+.loop-card { border: 1px solid var(--line); border-top: 3px solid var(--accent); background: var(--surface-2); padding: 1.3rem; border-radius: 9px; }
+.feedback-loop { border-top-color: #c87945; }
+.haptic-page .loop-rate { color: var(--accent-soft); font-size: .84rem; margin-bottom: .5rem; }
+.haptic-page .feedback-loop .loop-rate { color: #d89361; }
+body.light .haptic-page .feedback-loop .loop-rate { color: #97501e; }
+.haptic-equation { padding: 1.4rem .4rem; text-align: center; font-family: Georgia, serif; font-size: clamp(1.1rem, 3vw, 1.5rem); }
+.haptic-note { border-left: 2px solid var(--accent); padding-left: 1rem; }
+.asset-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .8rem; border: 1px dashed var(--muted); border-radius: 10px; background: var(--surface-2); min-height: 220px; padding: 1.6rem; text-align: center; margin-top: 1rem; }
+.asset-label { color: var(--accent-soft); font-size: .75rem; text-transform: uppercase; letter-spacing: .09em; }
+.demo-placeholder { width: 100%; min-width: 0; aspect-ratio: 16 / 7; }
+.demo-placeholder p { max-width: 570px; }
+.haptic-video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #000; border-radius: 10px; }
+.result-figure { max-width: 790px; margin: 1.4rem auto; }
+.haptic-page .team-list { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin: 0 0 1.5rem; list-style: none; }
+.contribution-placeholder { min-height: 120px; margin-bottom: 1.5rem; }
+.closing-link { margin-top: 2rem; }
+.haptic-page section, .haptic-page h2[id] { scroll-margin-top: 7rem; }
+@media (max-width: 800px) {
+ .haptic-hero, .haptic-columns { grid-template-columns: 1fr; gap: 1.5rem; }
+ .snapshot-grid, .context-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .haptic-page { padding-top: 2rem; }
+ .haptic-hero { margin-bottom: 1.5rem; }
+ .haptic-page section, .haptic-page h2[id] { scroll-margin-top: 9rem; }
+ .demo-placeholder { aspect-ratio: auto; min-height: 240px; }
+ .asset-placeholder { padding: 1.2rem; }
+}
+@media (max-width: 380px) {
+ .snapshot-grid, .context-grid { grid-template-columns: 1fr; }
+}

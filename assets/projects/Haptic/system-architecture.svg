@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">Real-time haptic force feedback system architecture</title>
+<desc id="desc">Blue forward path: user grip motion, magnetic encoder, ESP32-C6 state acquisition, SOFA simulation with dVRK PSM and deformable liver. Orange return path: contact force estimation, K B x proxy parameters, embedded spring–damper rendering, nonlinear motor command, BLDC motor, haptic feedback to the user.</desc>
+<defs><marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#2868c7"/></marker><marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#c45a27"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#193248}.head{font-size:24px;font-weight:700}.body{font-size:19px;fill:#465e73}.small{font-size:17px;fill:#465e73}.box{fill:#fff;stroke:#d6e0ec;stroke-width:2}.forward{fill:none;stroke:#2868c7;stroke-width:3;marker-end:url(#blue)}.feedback{fill:none;stroke:#c45a27;stroke-width:3;marker-end:url(#orange)}</style>
+<rect width="1440" height="760" rx="12" fill="#fff"/>
+<text x="40" y="48" class="head" font-size="28">Real-Time Haptic Feedback Architecture</text>
+<text x="40" y="80" class="body">Haptic Force-Cepx · closed-loop engineering prototype</text>
+<path d="M1060 40h45" class="forward"/><text x="1120" y="46" class="small">Motion / encoder state</text>
+<path d="M1060 76h45" class="feedback"/><text x="1120" y="82" class="small">Contact / feedback</text>
+<rect x="30" y="120" width="360" height="576" rx="16" fill="#f7f9fc" stroke="#d6e0ec"/>
+<rect x="520" y="120" width="400" height="576" rx="16" fill="#f7f9fc" stroke="#d6e0ec"/>
+<rect x="1050" y="120" width="360" height="576" rx="16" fill="#f7f9fc" stroke="#d6e0ec"/>
+<text x="55" y="162" class="head">User + Haptic Gripper</text><text x="55" y="192" class="small">Physical interaction</text>
+<text x="545" y="157" class="head">ESP32-C6</text><text x="545" y="188" class="head">Embedded Controller</text>
+<text x="1075" y="162" class="head">SOFA Simulation</text><text x="1075" y="192" class="small">Host computer · ~100–200 Hz</text>
+<rect x="55" y="225" width="310" height="120" rx="10" class="box"/>
+<text x="75" y="260" class="head">Magnetic Encoder</text><text x="75" y="292" class="body">Grip motion → position x</text><text x="75" y="321" class="body">and velocity ẋ</text>
+<rect x="545" y="225" width="350" height="120" rx="10" class="box"/>
+<text x="565" y="260" class="head">State acquisition + I/O</text><text x="565" y="292" class="body">Encoder state to host</text><text x="565" y="321" class="body">Serial parameter exchange</text>
+<rect x="1075" y="225" width="310" height="120" rx="10" class="box"/>
+<text x="1095" y="260" class="head">dVRK PSM</text><text x="1095" y="293" class="head">Deformable Liver</text><text x="1095" y="322" class="body">Tool–tissue interaction</text>
+<path d="M365 278H545" class="forward"/><text x="410" y="258" class="small">Grip state</text>
+<path d="M895 278H1075" class="forward"/><text x="941" y="258" class="small">Serial I/O</text>
+<rect x="1075" y="396" width="310" height="110" rx="10" class="box"/>
+<text x="1095" y="430" class="head">Contact Force</text><text x="1095" y="459" class="head">Estimation</text><text x="1095" y="488" class="small">Proxy contact + constraints</text>
+<path d="M1230 345V396" class="feedback"/>
+<rect x="1075" y="560" width="310" height="100" rx="10" class="box"/>
+<text x="1095" y="597" class="head">Local model update</text><text x="1095" y="633" class="body">K, B, x_proxy estimation</text><path d="M1230 506V560" class="feedback"/>
+<rect x="545" y="396" width="350" height="110" rx="10" class="box"/>
+<text x="565" y="429" class="head">Spring–Damper</text><text x="565" y="458" class="head">Haptic Rendering</text><text x="565" y="489" class="body">Fₕ = K(x_proxy − x) − Bẋ</text>
+<path d="M720 345V396" class="forward"/><text x="738" y="378" class="small">Local encoder state</text>
+<path d="M1075 610H975V450H895" class="feedback"/><text x="939" y="409" class="small">K, B,</text><text x="939" y="432" class="small">x_proxy</text>
+<rect x="545" y="560" width="350" height="100" rx="10" class="box"/>
+<text x="565" y="594" class="head">Motor Command</text><text x="565" y="623" class="body">Nonlinear mapping + saturation</text><text x="565" y="649" class="small">Inner loop: over 1 kHz</text>
+<path d="M720 506V560" class="feedback"/>
+<rect x="55" y="560" width="310" height="100" rx="10" class="box"/>
+<text x="75" y="598" class="head">BLDC Motor</text><text x="75" y="633" class="body">Driver + gripper mechanism</text>
+<path d="M545 610H365" class="feedback"/><text x="407" y="588" class="small">Command</text>
+<path d="M210 560V345" class="feedback"/><text x="230" y="449" class="body">Haptic</text><text x="230" y="478" class="body">Feedback</text>
+<text x="40" y="733" class="small">Motion travels toward the simulation; contact-derived resistance returns to the user's hand.</text>
+</svg>

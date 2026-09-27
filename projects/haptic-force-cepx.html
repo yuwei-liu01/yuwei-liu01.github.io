@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Haptic Force-Cepx project details." />
-  <title>Haptic Force-Cepx | Yuwei Liu</title>
+  <meta name="description" content="A closed-loop haptic prototype coupling a physical motorized gripper with SOFA-based soft-tissue simulation for surgical training research." />
+  <title>Real-Time Haptic Force Feedback for Surgical Training | Yuwei Liu</title>
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="haptic-force-cepx.css" />
 </head>
 <body class="dark">
   <header class="site-header">
@@ -24,58 +25,59 @@
     </div>
   </header>
 
-  <main class="container project-page">
-    <section class="section">
-      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-
-      <h1>Haptic Force-Cepx</h1>
-      <p class="project-overview">
-        This project explores force-feedback interface design for more intuitive human-robot interaction.
-        The focus is on translating sensed force signals into clear, stable haptic cues that improve operator confidence and precision.
-      </p>
-
-      <h2>Project Goal</h2>
-      <p>
-        Design and evaluate a haptic interaction prototype that can communicate environmental resistance and contact events,
-        reducing user uncertainty during teleoperation or guidance tasks.
-      </p>
-
-      <h2>What I Did / My Contribution</h2>
-      <ul>
-        <li>Designed interaction scenarios and key feedback requirements for user tasks.</li>
-        <li>Integrated sensing and actuation loops for responsive force-feedback behavior.</li>
-        <li>Tested and refined signal filtering to reduce jitter and improve feedback quality.</li>
-        <li>Recorded observations on usability and interface clarity for future design iterations.</li>
-      </ul>
-
-      <h2>Methods / Workflow</h2>
-      <ol>
-        <li>Define target interaction use cases and measurable usability criteria.</li>
-        <li>Build force input-output mapping and baseline control logic.</li>
-        <li>Run calibration and sensitivity tests under different interaction conditions.</li>
-        <li>Iterate hardware/software parameters using feedback from trial sessions.</li>
-      </ol>
-
-      <h2>Images / Videos / Simulation</h2>
-      <div class="media-placeholder" role="img" aria-label="Haptic prototype media placeholder">
-        Add interface photos, test setup images, or haptic response videos here.
+  <main class="container project-page haptic-page" id="main-content">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+    <section class="haptic-hero" aria-labelledby="project-title">
+      <div>
+        <p class="eyebrow">Haptic Force-Cepx / Team Prototype</p>
+        <h1 id="project-title">Real-Time Haptic Force Feedback for Surgical Training</h1>
+        <p class="project-overview">A closed-loop haptic prototype coupling a physical motorized gripper with SOFA-based soft-tissue simulation for real-time surgical training research.</p>
+        <p class="haptic-tags">Haptics · Medical Robotics · SOFA · Real-Time Control · Embedded Systems</p>
+        <div class="haptic-actions"><a class="haptic-button" href="#architecture">Explore the system ↓</a><a class="card-link" href="#resources">Final Report →</a></div>
       </div>
-
-      <h2>Results / Takeaways</h2>
-      <p>
-        The prototype demonstrated improved interaction clarity in constrained tasks.
-        A key takeaway was that small changes in feedback scaling and filtering strongly influence perceived stability and comfort.
-      </p>
-
-      <h2>Tools / Skills</h2>
-      <p>Haptics, Human-Robot Interaction, Prototype Testing, Signal Filtering, Interface Design</p>
-
-      <h2>Optional Links</h2>
-      <ul>
-        <li><a href="#" aria-label="Optional experiment report placeholder">Experiment report placeholder</a></li>
-        <li><a href="#" aria-label="Optional demonstration video placeholder">Demonstration video placeholder</a></li>
-      </ul>
+      <figure class="haptic-figure hero-figure"><img src="../assets/projects/Haptic/system-photo.jpg" width="1600" height="1200" alt="Physical motorized gripper beside a laptop displaying the virtual surgical gripper and tissue scene" fetchpriority="high"/><figcaption>Physical grip controller and simulation. Final report, Fig. 1.</figcaption></figure>
     </section>
+
+    <section class="section" aria-labelledby="snapshot"><h2 id="snapshot">Project Snapshot</h2>
+      <dl class="snapshot-grid"><div><dt>Project Type</dt><dd>Team Prototype</dd></div><div><dt>Application</dt><dd>Surgical Training Research</dd></div><div><dt>My Role</dt><dd class="pending-inline">To be added</dd></div><div><dt>Timeline</dt><dd class="pending-inline">To be added</dd></div></dl>
+    </section>
+    <section class="section" aria-labelledby="motivation"><p class="eyebrow">01 / The problem</p><h2 id="motivation">Motivation</h2>
+      <p>When direct tissue resistance is unavailable in robot-assisted manipulation or virtual training, users must rely heavily on visual cues to judge contact. This prototype explores how simulated tissue contact can be felt through a physical gripper.</p>
+      <p>Grip motion drives a virtual dVRK PSM gripper in SOFA. Simulated contact information is converted into resistance at the motorized grip controller, closing the loop between hand motion, tissue deformation, and haptic feedback.</p>
+      <p class="haptic-note">An early engineering prototype for surgical training research. No clinical validation or demonstrated training benefit is claimed.</p>
+    </section>
+    <section class="section" aria-labelledby="demonstration"><p class="eyebrow">02 / In motion</p><h2 id="demonstration">Demonstration</h2>
+      <div class="asset-placeholder demo-placeholder"><span class="asset-label">Asset needed · 15–30 second MP4</span><p>Demo video to be added: physical gripper motion synchronized with SOFA tissue deformation.</p></div>
+      <!-- When the approved MP4 is available, replace the placeholder above with this template's video and set its source. No missing-file request is made now. -->
+      <template id="demo-video-template"><video class="haptic-video" autoplay muted loop playsinline controls preload="metadata" aria-label="Physical gripper motion synchronized with SOFA tissue deformation"><source type="video/mp4"/>Your browser does not support embedded video.</video></template>
+    </section>
+    <section class="section" aria-labelledby="architecture"><p class="eyebrow">03 / Closing the loop</p><h2 id="architecture">System Architecture</h2>
+      <figure class="haptic-figure diagram-figure"><a href="../assets/projects/Haptic/system-architecture.svg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size system architecture diagram"><img src="../assets/projects/Haptic/system-architecture.svg" width="1440" height="760" loading="lazy" alt="Closed loop: user and magnetic encoder send grip state through ESP32-C6 to the SOFA dVRK PSM and deformable liver; contact estimation returns K, B, and proxy position to embedded spring–damper rendering, motor command, BLDC motor, and user feedback"/></a><figcaption>Blue: grip motion and encoder state → simulation. Orange: contact information → embedded rendering → motor → user. <a href="../assets/projects/Haptic/system-architecture.svg" target="_blank" rel="noopener noreferrer">Open full-size diagram ↗</a></figcaption></figure>
+    </section>
+    <section class="section" aria-labelledby="control"><p class="eyebrow">04 / Two update rates</p><h2 id="control">Real-Time Control</h2>
+      <div class="haptic-columns"><article class="loop-card"><p class="loop-rate">Approximately 100–200 Hz</p><h3>Outer Simulation Loop</h3><ul><li>SOFA scene update</li><li>Soft-tissue deformation</li><li>Contact detection</li><li>Contact-force processing</li><li>K, B, and x<sub>proxy</sub> estimation</li></ul></article><article class="loop-card feedback-loop"><p class="loop-rate">Over 1 kHz</p><h3>Inner Embedded Haptic Loop</h3><ul><li>Encoder position and velocity</li><li>Spring–damper model</li><li>Nonlinear force-to-motor mapping</li><li>Command saturation</li><li>BLDC motor actuation</li></ul></article></div>
+      <div class="haptic-equation" aria-label="F h equals K times x proxy minus x, minus B times x dot">F<sub>h</sub> = K(x<sub>proxy</sub> − x) − Bẋ</div>
+      <p>K is estimated stiffness, B is damping, and x<sub>proxy</sub> is the local equilibrium position. The embedded loop uses the latest parameters and encoder state between simulation updates. Rates are reported in the project report, rather than independently benchmarked here.</p>
+    </section>
+    <section class="section" aria-labelledby="implementation"><p class="eyebrow">05 / Engineering implementation</p><h2 id="implementation">Simulation and Hardware</h2>
+      <div class="haptic-columns"><article><h3>Simulation</h3><p>A SOFA scene couples the virtual dVRK PSM gripper with a deformable liver model. Contact proxy spheres support collision handling; constraint-based contact information feeds the local parameter estimate.</p><figure class="haptic-figure"><img src="../assets/projects/Haptic/simulation-contact-proxy.png" width="1099" height="614" loading="lazy" alt="SOFA virtual PSM gripper above deformable tissue represented by red and yellow contact proxy spheres"/><figcaption>Tissue deformation proxy spheres. Final report, Fig. 3.</figcaption></figure></article>
+      <article><h3>Hardware</h3><p>The prototype combines a direct-drive BLDC motor, an MT6701 magnetic encoder, an ESP32-C6 controller, a TMC6300 motor driver, and a 3D-printed gripper mechanism. Serial communication exchanges grip state and haptic parameters with the host.</p><div class="asset-placeholder"><span class="asset-label">Asset needed</span><p>Annotated hardware figure to be added: BLDC motor, magnetic encoder, ESP32-C6, motor driver, and 3D-printed gripper mechanism.</p></div></article></div>
+    </section>
+    <section class="section" aria-labelledby="results"><p class="eyebrow">06 / Engineering evidence</p><h2 id="results">Preliminary Results</h2>
+      <p>A representative pinch motion illustrates the relationship between raw simulated contact force and the processed motor command. This is a preliminary engineering result from a single example, not a formal performance or user evaluation.</p>
+      <figure class="haptic-figure result-figure"><a href="../assets/projects/Haptic/force-command.svg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size force and command plot"><img src="../assets/projects/Haptic/force-command.svg" width="2136" height="1591" loading="lazy" alt="Representative pinch trace: black raw simulated contact force and orange dashed processed motor command rise near contact and fall afterward; the command returns to zero while simulated force remains nonzero"/></a><figcaption>Adapted from final report Fig. 4. Curves and numeric ticks are unchanged; labels clarify the plotted signals. The right-axis command units are unconfirmed.</figcaption></figure>
+      <p class="haptic-note">The orange trace is a controller command, not sensor-measured motor torque. This plot does not establish torque tracking accuracy or clinical effectiveness.</p>
+    </section>
+    <section class="section" aria-labelledby="limitations"><p class="eyebrow">07 / Scope and next steps</p><h2 id="limitations">Limitations and Future Work</h2>
+      <div class="haptic-columns"><article><h3>Current limitations</h3><ul><li>Single-actuator feedback</li><li>Limited degrees of freedom</li><li>Dependence on simulation and parameter estimation</li><li>No formal user study</li><li>No clinical validation</li></ul></article><article><h3>Future work</h3><p>Develop independent actuation for the gripper arms, extend feedback to additional degrees of freedom, and conduct structured engineering and user evaluations. These remain proposed next steps.</p></article></div>
+    </section>
+    <section class="section" aria-labelledby="team"><p class="eyebrow">08 / People and context</p><h2 id="team">Contribution and Team</h2>
+      <h3>Team</h3><ul class="team-list"><li>Shouyue Hu</li><li>August Phelps</li><li>Yuming Xu</li><li>Yuwei Liu</li></ul>
+      <h3>My Contribution</h3><div class="asset-placeholder contribution-placeholder"><span class="asset-label">To be added</span><p>To be added: Yuwei Liu’s individual responsibilities and technical contributions.</p></div>
+      <h3>Project Context</h3><dl class="context-grid"><div><dt>Course</dt><dd class="pending-inline">To be added</dd></div><div><dt>Semester</dt><dd class="pending-inline">To be added</dd></div><div><dt>Advisor</dt><dd class="pending-inline">To be added</dd></div><div><dt>Award / Recognition</dt><dd class="pending-inline">To be added</dd></div></dl>
+    </section>
+    <section class="section" aria-labelledby="resources"><p class="eyebrow">09 / Further reading</p><h2 id="resources">Resources</h2><div class="haptic-actions"><a class="haptic-button" href="../assets/projects/Haptic/final-report.pdf" target="_blank" rel="noopener noreferrer">Final Report (PDF) ↗</a><p>Source repository is currently private.</p></div></section>
+    <a href="../projects.html" class="back-link closing-link">← Back to Projects</a>
   </main>
 
   <footer class="site-footer">
