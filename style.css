@@ -610,3 +610,8 @@ li strong {
     grid-template-columns: 1fr;
   }
 }
+
+/* Preserve the complete multi-robot setup in this project's cards. */
+.card-image img.reciprocal-shell-cover {
+  object-fit: contain;
+}

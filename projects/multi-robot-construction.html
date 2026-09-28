@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Multi-robot collaborative construction project details." />
-  <title>Multi-Robot Collaborative Construction | Yuwei Liu</title>
+  <meta name="description" content="A team workshop project at Tongji University, 2024, exploring localization and coordinated robot operations for assembling a timber reciprocal shell." />
+  <title>Multi-Robot Collaborative Assembly | Yuwei Liu</title>
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="multi-robot-construction.css?v=4bad49cdbb" />
 </head>
 <body class="dark">
   <header class="site-header">
@@ -24,61 +25,107 @@
     </div>
   </header>
 
-  <main class="container project-page">
-    <section class="section">
-      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+  <main class="container project-page robot-project">
+    <a href="../projects.html" class="back-link">← All Projects</a>
+    <section class="robot-hero" id="overview" aria-labelledby="project-title">
+      <h1 id="project-title">Multi-Robot Collaborative Assembly</h1>
+      <p class="robot-subtitle">Localization-guided assembly of a timber reciprocal shell</p>
+      <p class="eyebrow">Tongji University · 2024 · Team Workshop Project</p>
+      <p class="robot-summary">This team workshop project explored coordinated robotic assembly of a timber reciprocal shell. The final construction approach used environment and component localization to support robot operations. The project also included an initial exploration of learning from recorded demonstrations.</p>
+      <figure><a href="../assets/projects/Multi-robot collaborative construction/assembly-overview.jpg" aria-label="Open full-size image: Multiple robotic arms and mobile bases around the timber shell"><img src="../assets/projects/Multi-robot collaborative construction/assembly-overview.jpg" alt="Multiple robotic arms and mobile bases around the timber shell" width="1800" height="771" loading="eager" /></a><figcaption>The team’s physical assembly setup. Robotic arms and marked timber components share the workspace.</figcaption></figure>
+      <div class="robot-placeholder ">Assembly demonstration video — to be added</div>
+      <p class="robot-note">Team project; individual contributions are detailed below.</p>
+    </section>
 
-      <h1>Multi-Robot Collaborative Construction</h1>
-      <p class="project-overview">
-        This project investigates cooperative behaviors for multiple robots working on construction-oriented tasks.
-        It focuses on task decomposition, coordination logic, and robust execution under shared workspace constraints.
-      </p>
-
-      <h2>Project Goal</h2>
-      <p>
-        Develop and evaluate a collaboration framework where multiple robots can coordinate task order, avoid conflicts,
-        and maintain execution progress for structured assembly or construction scenarios.
-      </p>
-
-      <h2>What I Did / My Contribution</h2>
-      <ul>
-        <li>Designed multi-robot task allocation logic for cooperative construction steps.</li>
-        <li>Evaluated collision-aware coordination and timing synchronization strategies.</li>
-        <li>Built simulation scenarios to compare cooperative vs. single-robot throughput.</li>
-        <li>Analyzed bottlenecks and summarized design recommendations for scalability.</li>
-      </ul>
-
-      <h2>Methods / Workflow</h2>
-      <ol>
-        <li>Define construction task graph and resource dependencies.</li>
-        <li>Assign tasks across robot agents based on capability and timing constraints.</li>
-        <li>Simulate coordinated execution with conflict detection and resolution rules.</li>
-        <li>Review performance metrics and iterate scheduling/coordination policies.</li>
-      </ol>
-
-      <h2>Images / Videos / Simulation</h2>
-      <div class="card-image">
-        <img
-          src="../assets/projects/Multi-robot collaborative construction/cover.png"
-          alt="Cover image for Multi-Robot Collaborative Construction project"
-          loading="lazy"
-        />
+    <section class="robot-section" id="system">
+      <div class="robot-copy"><p class="eyebrow">01 / SYSTEM</p><h2>System Overview</h2><p>The target structure and assembly sequence define the assembly tasks. Environment and component localization support the team’s coordinated robot operations.</p></div>
+      <figure class="robot-overview-figure">
+        <div class="robot-diagram-scroll" role="region" tabindex="0" aria-label="System overview diagram; scroll horizontally on small screens" aria-describedby="system-diagram-caption">
+          <a href="../assets/projects/Multi-robot%20collaborative%20construction/system-overview-hd.png" aria-label="Open the full-resolution system overview diagram">
+            <img src="../assets/projects/Multi-robot%20collaborative%20construction/system-overview-web-2400.webp"
+              srcset="../assets/projects/Multi-robot%20collaborative%20construction/system-overview-web-1200.webp 1200w, ../assets/projects/Multi-robot%20collaborative%20construction/system-overview-web-2400.webp 2400w"
+              sizes="(max-width: 700px) 1500px, (max-width: 1217px) 92vw, 1120px"
+              width="2400" height="1360"
+              alt="Three-column system overview: task and skill preparation, perception and control, and robot team and assembly. The solid route connects assembly sequencing and localization to one localization robot and two assembly robots. The dashed gold route marks learning exploration with limited performance."
+              loading="lazy" decoding="async" />
+          </a>
+        </div>
+        <figcaption id="system-diagram-caption">Functional overview of the assembly workflow.
+          <span class="robot-diagram-mobile-hint">Swipe horizontally to explore the diagram.</span>
+          <span class="robot-diagram-links"><a href="../assets/projects/Multi-robot%20collaborative%20construction/system-overview-hd.png">View full-resolution image ↗</a><a href="../assets/projects/Multi-robot%20collaborative%20construction/system-overview-hd.svg" download>Download SVG</a></span>
+        </figcaption>
+      </figure>
+      <div class="robot-copy"><h3>Physical configuration</h3><p>The workshop setup brings together robotic arms, mobile bases, and marked timber components. The accompanying board detail documents a gripper and camera assembly.</p></div>
+      <figure><a href="../assets/projects/Multi-robot collaborative construction/workshop-prototype.jpg" aria-label="Open full-size image: Robotic arms on mobile bases beside the timber shell prototype"><img src="../assets/projects/Multi-robot collaborative construction/workshop-prototype.jpg" alt="Robotic arms on mobile bases beside the timber shell prototype" width="1800" height="1303" loading="lazy" /></a><figcaption>Physical configuration: robotic arms on mobile bases, with the timber shell in the shared work area.</figcaption></figure>
+      <div class="robot-pair">
+        <figure><a href="../assets/projects/Multi-robot collaborative construction/end-effector-study.jpg" aria-label="Open full-size image: Workshop drawing labeling a metal gripper, connector, Orbbec camera, and camera holder"><img src="../assets/projects/Multi-robot collaborative construction/end-effector-study.jpg" alt="Workshop drawing labeling a metal gripper, connector, Orbbec camera, and camera holder" width="526" height="434" loading="lazy" /></a><figcaption>Documented hardware: metal gripper, connector, Orbbec camera, and camera holder. Drawing excerpt from workshop board 2; detailed implementation remains to be confirmed.</figcaption></figure>
+        <figure><a href="../assets/projects/Multi-robot collaborative construction/component-markers.jpg" aria-label="Open full-size image: Visual markers fixed to intersecting timber components"><img src="../assets/projects/Multi-robot collaborative construction/component-markers.jpg" alt="Visual markers fixed to intersecting timber components" width="1086" height="830" loading="lazy" /></a><figcaption>Physical components with visual markers. Marker implementation is discussed below.</figcaption></figure>
       </div>
+      <details class="robot-input"><summary>Task input: target structure &amp; assembly sequence</summary><p>The team’s parametric design and assembly studies provided the structure and component relationships for defining assembly tasks.</p><figure><a href="../assets/projects/Multi-robot collaborative construction/parametric-design.jpg" aria-label="Open full-size image: Parametric timber shell and structure generation study"><img src="../assets/projects/Multi-robot collaborative construction/parametric-design.jpg" alt="Parametric timber shell and structure generation study" width="1448" height="328" loading="lazy" /></a><figcaption>Parametric design study from workshop board 1. The detailed assembly sequence remains to be documented.</figcaption></figure></details>
+    </section>
 
-      <h2>Results / Takeaways</h2>
-      <p>
-        The collaborative workflow showed stronger efficiency than isolated operation in structured tasks.
-        One major takeaway was that explicit task dependencies and simple conflict rules can provide reliable baseline coordination.
-      </p>
+    <section class="robot-section" id="perception">
+      <div class="robot-copy"><p class="eyebrow">02 / PERCEPTION</p><h2>Perception &amp; Localization</h2><p>Localization addressed two distinct needs: locating the robotic setup in its environment and locating timber components for manipulation.</p></div>
+      <div class="robot-pair">
+        <article><h3>Environment Localization</h3><p>The workshop diagram connects LiDAR-based SLAM mapping, indoor maps, scan matching, and mobile-base localization. A parallel branch shows point-cloud visualization, an electronic fence, and path planning.</p>
+        <figure class="robot-localization-figure"><a href="../assets/projects/Multi-robot%20collaborative%20construction/environment-localization.svg" aria-label="Open editable environment-localization diagram"><img src="../assets/projects/Multi-robot%20collaborative%20construction/environment-localization.svg" alt="Two conceptual branches: LiDAR through SLAM mapping, indoor map and scan matching to mobile-base localization; spatial point clouds through RViz visualization and an electronic fence to path planning." width="680" height="880" loading="lazy" /></a><figcaption>Environment-localization and spatial-planning concepts, redrawn from the team’s workshop diagram. Implementation details remain to be confirmed.</figcaption></figure>
+        <div class="robot-placeholder robot-media-placeholder">Localization visualization — to be added</div></article>
+        <article><h3>Component Localization</h3><p>The team used visual markers on timber components for component localization. The workshop board labels AprilTag; the calibration method, coordinate transforms, and specific implementation remain to be confirmed.</p>
+        <figure><a href="../assets/projects/Multi-robot collaborative construction/prototype-detail.jpg" aria-label="Open full-size image: Black-and-white visual markers on assembled timber components"><img src="../assets/projects/Multi-robot collaborative construction/prototype-detail.jpg" alt="Black-and-white visual markers on assembled timber components" width="1800" height="1012" loading="lazy" /></a><figcaption>Marker placement on the timber prototype.</figcaption></figure></article>
+      </div>
+      <div class="robot-placeholder ">Calibration and coordinate-frame details — to be confirmed</div>
+    </section>
 
-      <h2>Tools / Skills</h2>
-      <p>Multi-Robot Systems, Coordination, Task Allocation, Simulation, Computational Design</p>
+    <section class="robot-section" id="manipulation">
+      <div class="robot-copy"><p class="eyebrow">03 / ROBOT OPERATIONS</p><h2>Coordinated Manipulation</h2><p>The team’s final construction approach relied on localization and coordinated robot operations. The available photograph shows multiple arms positioned around timber components; a verified sequence of robot actions remains to be added.</p></div>
+      <div class="robot-operation"><figure><a href="../assets/projects/Multi-robot collaborative construction/robot-operation.jpg" aria-label="Open full-size image: Two robot arms positioned on opposite sides of timber components"><img src="../assets/projects/Multi-robot collaborative construction/robot-operation.jpg" alt="Two robot arms positioned on opposite sides of timber components" width="592" height="390" loading="lazy" /></a><figcaption>Robot operation photograph from workshop board 2. The arms and end-effectors are visible around the timber components; this still does not establish their motion sequence.</figcaption></figure></div>
+      <div class="robot-copy"><h3>One assembly step</h3><p>Continuous footage or consecutive frames are needed to identify the supported actions and the role of each robot.</p></div>
+      <div class="robot-sequence" aria-label="Reserved consecutive assembly frames">
+        <div class="robot-placeholder robot-media-placeholder"><span>Frame 01</span>Assembly action — to be added</div>
+        <div class="robot-placeholder robot-media-placeholder"><span>Frame 02</span>Assembly action — to be added</div>
+        <div class="robot-placeholder robot-media-placeholder"><span>Frame 03</span>Assembly action — to be added</div>
+      </div>
+      <div class="robot-placeholder ">Step-by-step assembly sequence — to be added</div>
+      <div class="robot-placeholder ">Robot roles and coordination logic — to be confirmed</div>
+      <div class="robot-copy"><h3>End-effector interface</h3><p>The workshop board documents the gripper and camera arrangement shown in the system configuration. The detailed hardware specification and its use during each action remain to be documented.</p></div>
+      <div class="robot-placeholder ">End-effector details — to be added</div>
+    </section>
 
-      <h2>Optional Links</h2>
-      <ul>
-        <li><a href="#" aria-label="Optional simulation repository placeholder">Simulation repository placeholder</a></li>
-        <li><a href="#" aria-label="Optional presentation slides placeholder">Presentation slides placeholder</a></li>
-      </ul>
+    <section class="robot-section" id="experiments">
+      <div class="robot-copy"><p class="eyebrow">04 / PHYSICAL VALIDATION</p><h2>Physical Experiments</h2><p>The workshop materials document physical assembly studies and an assembled timber reciprocal shell. These photographs show the prototype and workshop activity; they do not establish a fully unattended construction process.</p></div>
+      <figure><a href="../assets/projects/Multi-robot collaborative construction/assembly-overview.jpg" aria-label="Open full-size image: Multiple robotic arms around the assembled marked timber shell"><img src="../assets/projects/Multi-robot collaborative construction/assembly-overview.jpg" alt="Multiple robotic arms around the assembled marked timber shell" width="1800" height="771" loading="lazy" /></a><figcaption>The timber reciprocal shell prototype within the team’s multi-robot setup.</figcaption></figure>
+      <div class="robot-pair">
+        <figure><a href="../assets/projects/Multi-robot collaborative construction/physical-test.jpg" aria-label="Open full-size image: Hands placing timber pieces in a reciprocal shell model"><img src="../assets/projects/Multi-robot collaborative construction/physical-test.jpg" alt="Hands placing timber pieces in a reciprocal shell model" width="1605" height="889" loading="lazy" /></a><figcaption>Manual assembly study used to explore component relationships.</figcaption></figure>
+        <figure><a href="../assets/projects/Multi-robot collaborative construction/prototype-detail.jpg" aria-label="Open full-size image: Intersecting timber components with visual markers"><img src="../assets/projects/Multi-robot collaborative construction/prototype-detail.jpg" alt="Intersecting timber components with visual markers" width="1800" height="1012" loading="lazy" /></a><figcaption>Assembled timber connections and attached visual markers.</figcaption></figure>
+      </div>
+      <div class="robot-placeholder ">Experimental observations and limitations — to be added</div>
+    </section>
+
+    <section class="robot-section robot-secondary" id="learning">
+      <div class="robot-copy"><p class="eyebrow">05 / INITIAL EXPLORATION</p><h2>Learning-Based Exploration</h2><p>The team recorded demonstrations and collected data to explore learning-based assembly. Performance was limited during the workshop, and the final construction approach relied on localization and coordinated robot operations.</p></div>
+      <div class="robot-learning-media"><figure><a href="../assets/projects/Multi-robot collaborative construction/demonstration-recording.jpg" aria-label="Open full-size image: A person demonstrating manipulation of marked timber components"><img src="../assets/projects/Multi-robot collaborative construction/demonstration-recording.jpg" alt="A person demonstrating manipulation of marked timber components" width="1800" height="1016" loading="lazy" /></a><figcaption>Demonstration collection material from the team’s initial learning exploration.</figcaption></figure></div>
+      <div class="robot-placeholder ">Dataset size, model, and evaluation details — to be added</div>
+    </section>
+
+    <section class="robot-section" id="credits">
+      <div class="robot-copy"><p class="eyebrow">06 / PEOPLE &amp; MATERIALS</p><h2>My Contribution &amp; Team Credits</h2><p>This is a team workshop project. The system, demonstrations, and physical prototype presented here are collective work.</p></div>
+      <div class="robot-copy"><h3>My Contribution</h3>
+        <div class="robot-placeholder ">Specific responsibilities and contributions — to be added</div>
+        <h3>Team Credits</h3>
+        <dl class="robot-credits">
+          <dt>Context</dt><dd>Team workshop project conducted at Tongji University, 2024</dd>
+          <dt>Workshop title</dt><dd>[To be confirmed]</dd>
+          <dt>Tutors</dt><dd>Zhen Xu, Ye Zhang, Wang Xiang</dd>
+          <dt>Team members</dt><dd>[To be added]</dd>
+          <dt>Image and video credits</dt><dd>[To be added]</dd>
+        </dl>
+        <p class="robot-note">Tutor names are transcribed from the headers of workshop boards 1 and 2.</p>
+        <h3>Project Materials</h3><p>Original team workshop boards documenting design studies, hardware concepts, and exploratory methods.</p>
+        <ul class="robot-materials">
+          <li><a href="../assets/projects/Multi-robot collaborative construction/workshop-board-1.pdf">Workshop board 1 (PDF, 18.7 MB)</a></li>
+          <li><a href="../assets/projects/Multi-robot collaborative construction/workshop-board-2.pdf">Workshop board 2 (PDF, 15.2 MB)</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
