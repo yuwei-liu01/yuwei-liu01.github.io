@@ -611,7 +611,9 @@ li strong {
   }
 }
 
-/* Preserve the complete multi-robot setup in this project's cards. */
+/* Fill this project's card frame with a centered crop; preserve the source image. */
 .card-image img.reciprocal-shell-cover {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
 }
