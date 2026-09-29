@@ -45,3 +45,9 @@ Tutors verified visually on both PDF headers: Zhen Xu (许蓁), Ye Zhang (张烨
 - `build_environment_diagram.py` regenerates the standalone SVG using the Python standard library. The original `environment-localization.jpg` is preserved.
 
 - Deployment preparation: one embedded PNG stream in `system-overview-hd.svg` was losslessly re-encoded after GitHub mistook compressed image data for an access token. The source PNG contained only IHDR, pHYs, IDAT and IEND chunks, with no textual metadata. Decoded RGB pixels were verified identical; diagram text and vector paths are unchanged.
+
+## Five-part narrative revision
+
+Six standalone SVGs reuse complete nested assets from the approved `system-overview-hd.svg`: `structure-model.svg` (nested SVG 0), `assembly-action-a.svg` / `assembly-action-b.svg` / `assembly-action-c.svg` (1–3), `workspace-study.svg` (4), and `end-effector-detail.svg` (13). Indices are zero-based among nested SVG elements. All local clip definitions and original embedded image data are retained. Only the outer placement and display dimensions are removed; viewBox geometry is preserved. `extract-story-assets.py` reproduces them.
+
+The HD overview is unchanged. Existing white-background crops/masks avoid screenshot borders; technical drawings are displayed on white in both themes. No new experimental imagery or action labels were generated. See `CONTENT-TODO.md` for missing footage and technical details.
