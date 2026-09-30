@@ -31,6 +31,11 @@
 .robot-actions figcaption { font-weight: 600; }
 .robot-actions img { aspect-ratio: 1; object-fit: contain; }
 .robot-learning { border-top: 1px solid var(--line); padding-top: 1rem; }
+.robot-learning-subsection { margin-top: 2rem; }
+.robot-project .robot-learning-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.3rem; list-style: none; padding: 0; margin: 2rem 0 1.2rem; }
+.robot-learning-flow li { position: relative; display: flex; align-items: center; min-width: 0; margin: 0; padding: .85rem .65rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); color: var(--text-strong); font-size: .82rem; line-height: 1.5; text-align: left; overflow-wrap: break-word; }
+.robot-learning-flow li:not(:last-child)::after { content: "→"; position: absolute; top: 50%; right: -1.3rem; width: 1.3rem; transform: translateY(-50%); color: var(--accent-soft); text-align: center; }
+.robot-learning-limit { border-left: 2px solid var(--accent-soft); padding-left: 1rem; }
 .robot-overview-figure { background: #fff; border: 1px solid #dce1e6; border-radius: 12px; overflow: hidden; }
 .robot-project .robot-overview-figure img { border-radius: 0; }
 .robot-diagram-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
@@ -78,6 +83,14 @@
  .robot-diagram-scroll > a { width: 1500px; max-width: none; }
  .robot-section-nav { gap: .65rem 1.1rem; }
  .robot-stage { margin-top: 2rem; }
+ .robot-project .robot-learning-flow { grid-template-columns: 1fr; gap: 1.5rem; }
+ .robot-learning-flow li { padding: .8rem 1rem; font-size: .9rem; }
+ .robot-learning-flow li:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: -1.5rem; left: 50%; width: auto; height: 1.5rem; transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+ #learning .robot-actions { grid-template-columns: 1fr; }
+ #learning .robot-actions figure { width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
 }
 
 .robot-split > figure { margin-top: 0; }
@@ -102,3 +115,12 @@
 .robot-section :is(h2, h3, h4, dt, .eyebrow),
 .robot-section-nav { text-align: left; }
 .robot-project .robot-sequence-placeholder { justify-content: flex-start; }
+
+/* Presentation adjustment for the low-contrast poster excerpt; keep the original intact. */
+.robot-operation-photo { position: relative; overflow: hidden; border-radius: 6px; }
+.robot-operation-photo img { filter: contrast(1.18); }
+.robot-operation-photo::after { content: ""; position: absolute; inset: 0; background: rgb(0 0 0 / 8%); pointer-events: none; }
+
+.robot-project .robot-video { margin: 1.5rem 0; }
+.robot-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #000; border-radius: 6px; }
+.robot-video video:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 4px; }

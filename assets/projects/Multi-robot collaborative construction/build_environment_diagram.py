@@ -1,4 +1,4 @@
-"""Redraw the environment-localization subset of the supplied workshop diagram.
+"""Draw the environment-localization and spatial-planning design.
 Only editable SVG geometry and text; no embedded screenshots or raster artwork.
 Run with Python 3. Optional preview: cairosvg.svg2png(url=..., write_to=...).
 """
@@ -7,7 +7,7 @@ from html import escape
 OUT = Path(__file__).resolve().parent
 parts = ['''<svg xmlns="http://www.w3.org/2000/svg" width="680" height="880" viewBox="0 0 680 880" role="img" aria-labelledby="title desc">
 <title id="title">Environment localization and spatial planning concepts</title>
-<desc id="desc">Redrawn from the team workshop diagram. Left: LiDAR, SLAM mapping, indoor map, scan matching, mobile-base localization. Right: spatial point clouds, RViz visualization, electronic fence, and path planning. These are documented functional concepts, not measured results or a verified software implementation.</desc>
+<desc id="desc">Environment-localization and spatial-planning design. Left: LiDAR, SLAM mapping, indoor map, scan matching, and mobile-base localization. Right: spatial point clouds, RViz visualization, electronic fence, and path planning.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#84979f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#283b46}.label{font-size:24px;font-weight:600}.sub{font-size:20px;fill:#607680}.heading{font-size:18px;font-weight:700;letter-spacing:1.3px}.icon{fill:none;stroke:#68838f;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.flow{fill:none;stroke:#84979f;stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round;marker-end:url(#arrow)}</style>
 <rect width="680" height="880" rx="12" fill="#fff"/>

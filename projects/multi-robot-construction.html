@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A team workshop project at Tongji University, 2024, exploring localization and coordinated robot operations for assembling a timber reciprocal shell." />
+  <meta name="description" content="A collaborative project at Tongji University, 2024. We explored localization and coordinated robot operations to assemble a timber reciprocal shell." />
   <title>Multi-Robot Collaborative Assembly | Yuwei Liu</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="multi-robot-construction.css?v=3f08d62a5d" />
+  <link rel="stylesheet" href="multi-robot-construction.css?v=trajectory-four-step-20260929" />
 </head>
 <body class="dark">
   <header class="site-header">
@@ -31,12 +31,18 @@
       <div class="robot-hero-heading">
         <h1 id="project-title">Multi-Robot Collaborative Assembly</h1>
         <p class="robot-subtitle">Localization-guided assembly of a timber reciprocal shell</p>
-        <p class="eyebrow">Tongji University · 2024 · Team Workshop Project</p>
+        <p class="eyebrow">2024 · Collaborative project at Tongji University.</p>
         <p class="eyebrow">Tutors: Xu Zhen, Zhang Ye, Xiang Wang</p>
       </div>
-      <p class="robot-summary">Our team explored how three robots could assemble a timber reciprocal shell. One robot provided localization support without handling boards; two assembly robots used grippers and cameras to manipulate the timber components and build the reciprocal structure together.</p>
-      <figure class="robot-hero-figure"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-overview.jpg" alt="The team’s multi-robot setup and timber reciprocal shell" width="1800" height="771" fetchpriority="high" decoding="async" /><figcaption>The team’s multi-robot setup and timber reciprocal shell.</figcaption></figure>
-      <div class="robot-placeholder robot-hero-video" id="assembly-demo">Assembly demonstration video — to be added</div>
+      <p class="robot-summary">We explored how three robots could assemble a timber reciprocal shell. One robot provided localization support without handling boards; two assembly robots used grippers and cameras to manipulate the timber components and build the reciprocal structure together.</p>
+      <figure class="robot-hero-figure"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-overview.jpg" alt="Multi-robot setup and timber reciprocal shell" width="1800" height="771" fetchpriority="high" decoding="async" /><figcaption>Multi-robot setup and timber reciprocal shell.</figcaption></figure>
+      <figure class="robot-video" id="assembly-demo">
+        <video controls playsinline preload="none" poster="../assets/projects/Multi-robot%20collaborative%20construction/construction-poster.jpg" width="1920" height="1080" aria-label="Assembly demonstration video">
+          <source src="../assets/projects/Multi-robot%20collaborative%20construction/construction.mp4" type="video/mp4" />
+          <a href="../assets/projects/Multi-robot%20collaborative%20construction/construction.mp4">Open the video</a>.
+        </video>
+        <figcaption>Robotic construction process.</figcaption>
+      </figure>
     </header>
 
     <nav class="robot-section-nav" aria-label="Project sections">
@@ -57,7 +63,7 @@
           </a>
         </div>
       </figure>
-      <p class="robot-copy">The diagram connects task preparation, perception and control, and the robot team. Its dashed gold branch represents exploratory learning from repeated single-action recordings; the final assembly primarily used localization and coordinated robot operations.</p>
+      <p class="robot-copy">The diagram connects task preparation, perception and control, and the robot team. Its dashed gold branch represents exploratory learning from repeated single-action recordings.</p>
       <dl class="robot-system-key">
         <div><dt>Task &amp; Skill Preparation</dt><dd>The target structure, three assembly actions and their sequence, alongside repeated video demonstrations for trajectory learning exploration.</dd></div>
         <div><dt>Perception &amp; Control</dt><dd>Environment localization, component localization and motion control support the assembly tasks.</dd></div>
@@ -66,58 +72,78 @@
     </section>
 
     <section class="robot-section" id="learning" aria-labelledby="learning-title">
-      <div class="robot-copy"><p class="eyebrow">02 / LEARNING EXPLORATION</p><h2 id="learning-title">Trajectory Learning Exploration</h2><p>The team repeatedly demonstrated and recorded three types of timber overlap action. Each video contains one complete action and forms one trajectory sample; multiple videos of the same action type make up that class’s demonstration data.</p></div>
+      <div class="robot-copy"><p class="eyebrow">02 / LEARNING EXPLORATION</p><h2 id="learning-title">Trajectory Learning Exploration</h2><p>We explored whether repeated visual demonstrations could support a learned representation of timber assembly motion.</p></div>
+      <h3>Three Assembly Configurations</h3>
       <div class="robot-split">
         <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/structure-model.svg" aria-label="Open full-size image: Parametric reciprocal shell model showing intersecting timber components"><img src="../assets/projects/Multi-robot%20collaborative%20construction/structure-model.svg" alt="Parametric reciprocal shell model showing intersecting timber components" width="544" height="341" loading="lazy" decoding="async" /></a><figcaption>Target structure — the parametric reciprocal shell model.</figcaption></figure>
-        <div class="robot-copy"><h3>Three overlap actions</h3><p>The target shell uses three different ways of overlapping the boards, shown below. Their order and repetition define the assembly sequence. These structural actions are distinct from the robot’s grip–move–release–pick-next handling cycle.</p><p>The grooves on the upper and lower faces have different orientations, so the board’s face and direction must be distinguished in each demonstration.</p></div>
+        <div class="robot-copy"><p>Three timber-overlap configurations form the reciprocal shell. Their order and repetition define the assembly sequence. Different groove orientations on the upper and lower faces require each board’s face and direction to be distinguished.</p></div>
       </div>
-      <div class="robot-actions" aria-label="Three timber overlap actions">
-        <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-a.svg" aria-label="Open full-size image: Timber overlap action A"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-a.svg" alt="Timber overlap action A" width="195" height="195" loading="lazy" decoding="async" /></a><figcaption>Action A</figcaption></figure>
-        <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-b.svg" aria-label="Open full-size image: Timber overlap action B"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-b.svg" alt="Timber overlap action B" width="198" height="195" loading="lazy" decoding="async" /></a><figcaption>Action B</figcaption></figure>
-        <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-c.svg" aria-label="Open full-size image: Timber overlap action C"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-c.svg" alt="Timber overlap action C" width="195" height="195" loading="lazy" decoding="async" /></a><figcaption>Action C</figcaption></figure>
+      <div class="robot-actions" aria-label="Three timber-overlap configurations">
+        <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-a.svg" aria-label="Open full-size image: Assembly Configuration A"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-a.svg" alt="Assembly Configuration A" width="195" height="195" loading="lazy" decoding="async" /></a><figcaption>Assembly Configuration A</figcaption></figure>
+        <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-b.svg" aria-label="Open full-size image: Assembly Configuration B"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-b.svg" alt="Assembly Configuration B" width="198" height="195" loading="lazy" decoding="async" /></a><figcaption>Assembly Configuration B</figcaption></figure>
+        <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-c.svg" aria-label="Open full-size image: Assembly Configuration C"><img src="../assets/projects/Multi-robot%20collaborative%20construction/assembly-action-c.svg" alt="Assembly Configuration C" width="195" height="195" loading="lazy" decoding="async" /></a><figcaption>Assembly Configuration C</figcaption></figure>
       </div>
-      <div class="robot-placeholder robot-sequence-placeholder" id="learning-demo">Demonstration video — to be added</div>
       <div class="robot-split robot-learning">
-        <div class="robot-copy"><h3>Markers across time</h3><p>Eight semicircular marks in different colors were drawn near the grooves to distinguish feature positions and observe motion. A trajectory is the path of the same colored mark across successive video frames—not a line joining the eight marks in a single frame.</p><p>The movement of multiple marks within one recording jointly describes the board’s translation and rotation.</p></div>
-        <figure class=""><a href="../assets/projects/Multi-robot%20collaborative%20construction/demonstration-recording.jpg" aria-label="Open full-size image: A team member demonstrating manipulation of marked timber components"><img src="../assets/projects/Multi-robot%20collaborative%20construction/demonstration-recording.jpg" alt="A team member demonstrating manipulation of marked timber components" width="1800" height="1016" loading="lazy" decoding="async" /></a><figcaption>Demonstration setup with colored semicircular marks near the timber grooves. Each recorded clip contains one complete overlap action.</figcaption></figure>
+        <div class="robot-copy"><h3>Demonstration Collection &amp; Motion Tracking</h3><p>We recorded repeated demonstrations of three timber-overlap configurations. Each recording captured one complete assembly action, forming a trajectory sample within its configuration-specific demonstration set. Eight differently colored semicircular markers near the board grooves provided visual features for following motion across frames and distinguishing board faces. Following the same colored marker over time produces a trajectory that represents its movement in the image.</p></div>
+        <figure><a href="../assets/projects/Multi-robot%20collaborative%20construction/demonstration-recording.jpg" aria-label="Open full-size image: Manual demonstration of marked timber components"><img src="../assets/projects/Multi-robot%20collaborative%20construction/demonstration-recording.jpg" alt="Manual demonstration of marked timber components" width="1800" height="1016" loading="lazy" decoding="async" /></a><figcaption>Demonstration setup with colored semicircular markers near the timber grooves.</figcaption></figure>
       </div>
-      <div class="robot-copy"><h3>Learning exploration and final assembly</h3><p>The team used these repeated demonstrations to explore machine-learning methods for studying motion paths. Learning performance was limited during the workshop; the final construction primarily relied on localization and coordinated multi-robot operations.</p></div>
+      <div class="robot-copy robot-learning-subsection">
+        <h3>Learning Exploration</h3>
+      </div>
+      <figure class="robot-video" id="learning-demo">
+        <video controls playsinline preload="none" poster="../assets/projects/Multi-robot%20collaborative%20construction/machine-learning-poster.jpg" width="1920" height="1080" aria-label="Trajectory-learning exploration video">
+          <source src="../assets/projects/Multi-robot%20collaborative%20construction/machine-learning.mp4" type="video/mp4" />
+          <a href="../assets/projects/Multi-robot%20collaborative%20construction/machine-learning.mp4">Open the video</a>.
+        </video>
+        <figcaption>Trajectory-learning exploration.</figcaption>
+      </figure>
+      <ol class="robot-learning-flow" aria-label="Trajectory-learning exploration workflow">
+        <li>Three Assembly Configurations</li>
+        <li>Repeated Video Demonstrations</li>
+        <li>Marker Motion Trajectories</li>
+        <li>Trajectory Learning Exploration</li>
+      </ol>
+      <p class="robot-note robot-learning-limit">Learning performance was limited in our experiments. The final prototype therefore relied primarily on visual-marker localization and coordinated multi-robot operations.</p>
     </section>
 
     <section class="robot-section" id="assembly" aria-labelledby="assembly-title">
-      <div class="robot-copy"><p class="eyebrow">03 / ROBOTIC ASSEMBLY</p><h2 id="assembly-title">Localization-Guided Assembly</h2><p>With the task defined, the team used localization to support robot operations. Environment and component information served different roles in the assembly workflow.</p></div>
+      <div class="robot-copy"><p class="eyebrow">03 / ROBOTIC ASSEMBLY</p><h2 id="assembly-title">Localization-Guided Assembly</h2><p>With the task defined, we used localization to support robot operations. Environment and component information served different roles in the assembly workflow.</p></div>
       <article class="robot-stage" id="perception" aria-labelledby="locate-title">
-        <div class="robot-copy"><h3 id="locate-title"><span class="robot-stage-letter">A</span> Locate</h3><p>Environment localization placed the robotic setup in its workspace, while visual markers helped locate the timber components. The team’s environment-localization approach involved SLAM; the workshop poster describes LiDAR mapping and scan matching, and labels the component markers as AprilTag.</p></div>
+        <div class="robot-copy"><h3 id="locate-title"><span class="robot-stage-letter">A</span> Locate</h3><p>The environment-localization design uses LiDAR / SLAM for workspace and mobile-base localization. Black-and-white visual markers on the timber boards supported component localization. The colored semicircular markers served a separate purpose: following demonstration motion for trajectory-learning exploration.</p></div>
         <div class="robot-locate-pair">
-          <figure class="robot-localization-figure"><a href="../assets/projects/Multi-robot%20collaborative%20construction/environment-localization.svg" aria-label="Open full-size image: Environment-localization and spatial-planning branches from the workshop system diagram"><img src="../assets/projects/Multi-robot%20collaborative%20construction/environment-localization.svg" alt="Environment-localization and spatial-planning branches from the workshop system diagram" width="680" height="880" loading="lazy" decoding="async" /></a><figcaption>Environment localization and spatial planning as described in the workshop poster.</figcaption></figure>
+          <figure class="robot-localization-figure"><a href="../assets/projects/Multi-robot%20collaborative%20construction/environment-localization.svg" aria-label="Open full-size image: Environment-localization and spatial-planning design"><img src="../assets/projects/Multi-robot%20collaborative%20construction/environment-localization.svg" alt="Environment-localization and spatial-planning design" width="680" height="880" loading="lazy" decoding="async" /></a><figcaption>Environment-localization and spatial-planning design.</figcaption></figure>
           <figure class=""><a href="../assets/projects/Multi-robot%20collaborative%20construction/component-markers.jpg" aria-label="Open full-size image: Black-and-white visual markers attached to overlapping timber components"><img src="../assets/projects/Multi-robot%20collaborative%20construction/component-markers.jpg" alt="Black-and-white visual markers attached to overlapping timber components" width="1086" height="830" loading="lazy" decoding="async" /></a><figcaption>Black-and-white component markers, shown alongside the colored semicircular marks used to observe demonstration motion.</figcaption></figure>
         </div>
+        <div class="robot-copy" id="localization-camera">
+          <h4>Localization Camera View</h4>
+          <p>A camera on the third robot provided visual observations for localization support. This robot did not carry timber boards; the other two robots performed board handling and assembly.</p>
+        </div>
+        <figure><a href="../assets/projects/Multi-robot%20collaborative%20construction/localization-camera-view.png" aria-label="Open full-size illustration: Localization camera-view design"><img src="../assets/projects/Multi-robot%20collaborative%20construction/localization-camera-view.png" alt="Design illustration of the third robot’s camera view, showing grippers, marked boards, and schematic motion paths" width="2400" height="1204" loading="lazy" decoding="async" /></a><figcaption>Localization camera view from the third robot — design illustration.</figcaption></figure>
       </article>
       <article class="robot-stage" id="coordinate" aria-labelledby="coordinate-title">
-        <div class="robot-copy"><h3 id="coordinate-title"><span class="robot-stage-letter">B</span> Coordinate</h3><p>The team separated localization support from board handling. One robot provided positioning support without carrying timber; the other two robots performed the assembly operations in the shared workspace.</p></div>
-        <figure class="robot-technical robot-workspace"><a href="../assets/projects/Multi-robot%20collaborative%20construction/workspace-study.svg" aria-label="Open full-size image: Workshop drawing of the multi-robot workspace and timber component arrangement"><img src="../assets/projects/Multi-robot%20collaborative%20construction/workspace-study.svg" alt="Workshop drawing of the multi-robot workspace and timber component arrangement" width="6048" height="2696" loading="lazy" decoding="async" /></a><figcaption>Shared workspace and robot arrangement — a workshop design study.</figcaption></figure>
+        <div class="robot-copy"><h3 id="coordinate-title"><span class="robot-stage-letter">B</span> Coordinate</h3><p>We assigned different roles to the three robots. One robot provided localization support without carrying timber, while the other two handled and assembled the boards in a shared workspace.</p></div>
+        <figure class="robot-technical robot-workspace"><a href="../assets/projects/Multi-robot%20collaborative%20construction/workspace-study.svg" aria-label="Open full-size image: Design drawing of the multi-robot workspace and timber component arrangement"><img src="../assets/projects/Multi-robot%20collaborative%20construction/workspace-study.svg" alt="Design drawing of the multi-robot workspace and timber component arrangement" width="6048" height="2696" loading="lazy" decoding="async" /></a><figcaption>Shared workspace and robot arrangement — design study.</figcaption></figure>
       </article>
       <article class="robot-stage" id="manipulation" aria-labelledby="manipulate-title">
-        <div class="robot-copy"><h3 id="manipulate-title"><span class="robot-stage-letter">C</span> Manipulate</h3><p>Each assembly robot used a gripper and camera to handle the boards. After placing a board, the robot released it and picked up the next one, repeating the handling cycle through the assembly sequence.</p></div>
+        <div class="robot-copy"><h3 id="manipulate-title"><span class="robot-stage-letter">C</span> Manipulate</h3></div>
         <div class="robot-hardware">
-          <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/end-effector-detail.svg" aria-label="Open full-size image: Exploded drawing of the timber gripper, connector, camera and mounting parts"><img src="../assets/projects/Multi-robot%20collaborative%20construction/end-effector-detail.svg" alt="Exploded drawing of the timber gripper, connector, camera and mounting parts" width="1055" height="1720" loading="lazy" decoding="async" /></a><figcaption>Gripper, connector and camera mounting arrangement from the workshop materials.</figcaption></figure>
+          <figure class="robot-technical"><a href="../assets/projects/Multi-robot%20collaborative%20construction/end-effector-detail.svg" aria-label="Open full-size image: Exploded drawing of the timber gripper, connector, camera and mounting parts"><img src="../assets/projects/Multi-robot%20collaborative%20construction/end-effector-detail.svg" alt="Exploded drawing of the timber gripper, connector, camera and mounting parts" width="1055" height="1720" loading="lazy" decoding="async" /></a><figcaption>Gripper, connector, and camera mounting arrangement.</figcaption></figure>
           <div>
+            <p>Each assembly robot used a gripper and camera to handle timber boards. The handling cycle involved grasping a board, moving and aligning it with the target, placing and releasing it, and repeating the process for the next board.</p>
             <h4>One board-handling cycle</h4>
-            <ol class="robot-cycle"><li>Grip a board</li><li>Move to the target position</li><li>Release</li><li>Pick the next board</li></ol>
-            <p class="robot-note">These handling steps execute the three timber overlap actions shown in <a href="#learning">Trajectory Learning Exploration</a>.</p>
-            <div class="robot-placeholder robot-sequence-placeholder">Continuous operation video or consecutive frames — to be added</div>
+            <ol class="robot-cycle"><li>Grasp a board</li><li>Move &amp; align</li><li>Place &amp; release</li><li>Repeat for the next board</li></ol>
           </div>
         </div>
       </article>
     </section>
 
     <section class="robot-section" id="results" aria-labelledby="results-title">
-      <div class="robot-copy"><p class="eyebrow">04 / RESULTS</p><h2 id="results-title">Demonstration &amp; Results</h2><p>The workshop produced a physical timber reciprocal shell through the team’s localization-guided assembly approach. The operation view below shows the robots working around the timber components, followed by the assembled prototype in the workshop.</p></div>
+      <div class="robot-copy"><p class="eyebrow">04 / RESULTS</p><h2 id="results-title">Demonstration &amp; Results</h2><p>We assembled a physical timber reciprocal shell using localization-guided robot operations. The images below show board handling and the assembled prototype.</p></div>
       <div class="robot-results">
-        <figure class=""><a href="../assets/projects/Multi-robot%20collaborative%20construction/robot-operation.jpg" aria-label="Open full-size image: Two robot arms positioned around timber components during workshop operations"><img src="../assets/projects/Multi-robot%20collaborative%20construction/robot-operation.jpg" alt="Two robot arms positioned around timber components during workshop operations" width="592" height="390" loading="lazy" decoding="async" /></a><figcaption>Robot operation at the timber assembly area.</figcaption></figure>
+        <figure class=""><a class="robot-operation-photo" href="../assets/projects/Multi-robot%20collaborative%20construction/robot-operation.jpg" aria-label="Open full-size image: Two robot arms positioned around timber components during assembly"><img src="../assets/projects/Multi-robot%20collaborative%20construction/robot-operation.jpg" alt="Two robot arms positioned around timber components during assembly" width="592" height="390" loading="lazy" decoding="async" /></a><figcaption>Robot operation at the timber assembly area.</figcaption></figure>
         <figure class=""><a href="../assets/projects/Multi-robot%20collaborative%20construction/workshop-prototype.jpg" aria-label="Open full-size image: Multiple robotic arms surrounding the timber reciprocal shell"><img src="../assets/projects/Multi-robot%20collaborative%20construction/workshop-prototype.jpg" alt="Multiple robotic arms surrounding the timber reciprocal shell" width="1800" height="1303" loading="lazy" decoding="async" /></a><figcaption>The assembled reciprocal shell in the multi-robot workspace.</figcaption></figure>
       </div>
-      <p class="robot-copy robot-note">The prototype demonstrates the team’s construction workflow at workshop scale. Learning-based assembly remained exploratory; the final construction used localization and coordinated robot operations.</p>
+      <p class="robot-copy robot-note">The experiments demonstrate assembly at prototype scale.</p>
     </section>
 
   </main>

@@ -13,8 +13,8 @@ This is a team workshop project at Tongji University (2024). Keep the published 
 
 ## Media needed
 
-- [ ] One demonstration video for the learning section; keep a single video slot below the three action diagrams, as requested. The repeated-recording dataset description remains separate from the number of videos displayed on the page.
-- [ ] Assembly demonstration video with permission/credits; use controls, no autoplay audio.
+- [x] One learning-exploration video below the three action diagrams: `machine-learning.mp4`, supplied by the user. This presentation clip is separate from the repeated-recording dataset.
+- [x] Assembly demonstration video: `construction.mp4`, supplied by the user for the page; controls enabled, no autoplay. Detailed video credits remain to be added.
 - [ ] One continuous board-handling cycle, or consecutive frames from the same cycle: grip, move to target, release, pick the next board. Do not substitute staged or generated images.
 - [ ] Original high-resolution robot-operation photo to replace the current poster excerpt (`robot-operation.jpg`).
 - [ ] Environment-localization recording showing the actual workshop setup and visual-marker detection footage.

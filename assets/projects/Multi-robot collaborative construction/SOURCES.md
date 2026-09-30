@@ -1,5 +1,11 @@
 # Project material sources
 
+## Localization camera illustration (2026-09-30)
+
+- `localization-camera-view.png` is the complete first and only page of `OP5-digital futures/process/三哥相机视角_复制.pdf`, rendered at 2400 × 1204 pixels with Poppler (`pdftoppm -scale-to 2400 -singlefile -png`). The source PDF is preserved in the project material folder.
+- This is a workshop technical illustration of the camera viewpoint, not a recorded camera frame. All trajectory lines, axes, arrows and labels were already in the source; no overlays, detection results or performance claims were added. No cropping or stretching was applied.
+- Displayed below the environment-localization diagram and component-marker photograph, with a full-size image link.
+
 Original files are preserved. Images are resized proportionally; only named board excerpts are cropped. No generated images are used.
 
 - `assembly-overview.jpg` ← `Existing repository cover.png`
@@ -51,3 +57,14 @@ Tutors verified visually on both PDF headers: Zhen Xu (许蓁), Ye Zhang (张烨
 Six standalone SVGs reuse complete nested assets from the approved `system-overview-hd.svg`: `structure-model.svg` (nested SVG 0), `assembly-action-a.svg` / `assembly-action-b.svg` / `assembly-action-c.svg` (1–3), `workspace-study.svg` (4), and `end-effector-detail.svg` (13). Indices are zero-based among nested SVG elements. All local clip definitions and original embedded image data are retained. Only the outer placement and display dimensions are removed; viewBox geometry is preserved. `extract-story-assets.py` reproduces them.
 
 The HD overview is unchanged. Existing white-background crops/masks avoid screenshot borders; technical drawings are displayed on white in both themes. No new experimental imagery or action labels were generated. See `CONTENT-TODO.md` for missing footage and technical details.
+
+## User-supplied videos (2026-09-29)
+
+Source folder: `OP5-digital futures/video/`. Original MOV files remain there unchanged.
+
+- `construction.mp4` ← `video/construction.mov` (126.47 s, HEVC 3436 × 1932); placed at `#assembly-demo`.
+- `machine-learning.mp4` ← `video/machine learning.MOV` (7.80 s, HEVC 3840 × 2160 with AAC audio); placed at `#learning-demo`.
+- Web copies: H.264, 1920 × 1080, yuv420p, original timing, MP4 faststart. Existing audio preserved as AAC; no autoplay.
+- `construction-poster.jpg`: actual construction video frame at 10 s.
+- `machine-learning-poster.jpg`: actual learning video frame at 2 s. This is a workshop presentation clip, not a claim of trained-model deployment.
+- Encoding: FFmpeg scale `1920:-2:flags=lanczos`, libx264 medium, CRF 23 (construction) / 22 (learning), AAC 128k where present, `-movflags +faststart -map_metadata -1`.
