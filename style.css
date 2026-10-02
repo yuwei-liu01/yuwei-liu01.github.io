@@ -617,3 +617,5 @@ li strong {
   object-position: center;
   border-radius: 7px;
 }
+
+.card-image img.haptic-card-cover { border-radius: 7px; }
