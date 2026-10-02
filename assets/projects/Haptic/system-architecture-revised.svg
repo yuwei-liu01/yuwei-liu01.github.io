@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1180" viewBox="0 0 2048 1007" role="img" aria-labelledby="title desc"><title id="title">Real-Time Haptic Feedback Architecture</title><desc id="desc">User hand and magnetic encoder send grip motion to the ESP32-C6 and SOFA. Contact force processing returns local spring–damper parameters; embedded rendering produces a motor torque command and resistive feedback.</desc><defs><marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#306fee" /></marker><marker id="orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ee7047" /></marker></defs><style>text{font-family:DejaVu Sans,sans-serif;fill:#19354d}.muted{fill:#617789}.body{font-size:18px;fill:#617789}.head{font-size:23px;font-weight:700}.small{font-size:16px;fill:#617789}</style><rect width="2048" height="1007" fill="white" />
+<text x="65" y="73" class="head" style="font-size:42px">Real-Time Haptic Feedback Architecture</text>
+<text x="67" y="111" class="body" style="font-size:23px">Haptic Force-Cepx surgical training prototype</text>
+<path d="M1540 72H1595" fill="none" stroke="#306fee" stroke-width="5" stroke-linecap="round" marker-end="url(#blue)" />
+<text x="1614" y="78" class="body" style="font-size:18px">Motion / state</text>
+<path d="M1540 111H1595" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="1614" y="117" class="body" style="font-size:18px">Force feedback</text>
+<rect x="65" y="185" width="515" height="682" rx="25" fill="#f9fbfd" stroke="#dbe5ee" stroke-width="2" /><path d="M90 186H555Q580 186 580 211V292H65V211Q65 186 90 186Z" fill="#eef4ff" />
+<text x="172" y="239" class="head" style="font-size:28px">Haptic Gripper</text>
+<text x="172" y="273" class="body" style="font-size:16px">PHYSICAL INTERACTION</text>
+<rect x="716" y="185" width="582" height="682" rx="25" fill="#f9fbfd" stroke="#dbe5ee" stroke-width="2" /><path d="M741 186H1273Q1298 186 1298 211V292H716V211Q716 186 741 186Z" fill="#eef4ff" />
+<text x="823" y="239" class="head" style="font-size:28px">ESP32-C6 Controller</text>
+<text x="823" y="273" class="body" style="font-size:16px">EMBEDDED REAL-TIME CONTROL</text>
+<rect x="1441" y="185" width="540" height="682" rx="25" fill="#f9fbfd" stroke="#dbe5ee" stroke-width="2" /><path d="M1466 186H1956Q1981 186 1981 211V292H1441V211Q1441 186 1466 186Z" fill="#eef4ff" />
+<text x="1548" y="239" class="head" style="font-size:28px">SOFA Simulation</text>
+<text x="1548" y="273" class="body" style="font-size:16px">HOST COMPUTER</text>
+<rect x="98" y="326" width="449" height="160" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="186" y="364" class="head" style="font-size:20px">Grip lever + magnetic encoder</text>
+<text x="186" y="399" class="body" style="font-size:16px">User’s hand drives the grip lever.</text>
+<text x="186" y="428" class="body" style="font-size:16px">Measures grip angle and angular velocity.</text>
+<text x="186" y="457" class="body" style="font-size:16px">x<tspan dy="5" font-size="12">device</tspan><tspan dy="-5">​</tspan>, ẋ<tspan dy="5" font-size="12">device</tspan><tspan dy="-5">​</tspan></text>
+<rect x="98" y="603" width="449" height="160" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="186" y="641" class="head" style="font-size:20px">Direct-drive BLDC motor</text>
+<text x="186" y="676" class="body" style="font-size:16px">Applies resistive feedback through the</text>
+<text x="186" y="705" class="body" style="font-size:16px">3D-printed lever to the user’s hand.</text>
+<rect x="753" y="326" width="508" height="123" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="841" y="364" class="head" style="font-size:20px">State acquisition &amp; serial I/O</text>
+<text x="841" y="399" class="body" style="font-size:16px">Reads encoder state and exchanges</text>
+<text x="841" y="428" class="body" style="font-size:16px">custom binary messages with the host.</text>
+<rect x="753" y="489" width="508" height="134" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="841" y="527" class="head" style="font-size:20px">Spring–damper rendering</text>
+<text x="841" y="562" class="body" style="font-size:16px">F<tspan dy="5" font-size="12">h</tspan><tspan dy="-5">​</tspan> = K(x<tspan dy="5" font-size="12">proxy</tspan><tspan dy="-5">​</tspan> − x) − Bẋ</text>
+<text x="841" y="591" class="body" style="font-size:16px">Local impedance model updated at high rate.</text>
+<rect x="753" y="663" width="508" height="123" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="841" y="701" class="head" style="font-size:20px">Nonlinear motor-command mapping</text>
+<text x="841" y="736" class="body" style="font-size:16px">Amplifies weak contact and limits output.</text>
+<text x="841" y="765" class="body" style="font-size:16px">τ<tspan dy="5" font-size="12">cmd</tspan><tspan dy="-5">​</tspan> = map(F<tspan dy="5" font-size="12">h</tspan><tspan dy="-5">​</tspan>)</text>
+<rect x="1478" y="326" width="467" height="129" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="1566" y="364" class="head" style="font-size:20px">Virtual surgical scene</text>
+<text x="1566" y="399" class="body" style="font-size:16px">dVRK PSM jaws, deformable liver FEM,</text>
+<text x="1566" y="428" class="body" style="font-size:16px">and visual feedback.</text>
+<rect x="1478" y="496" width="467" height="129" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="1566" y="534" class="head" style="font-size:20px">Contact-force estimation</text>
+<text x="1566" y="569" class="body" style="font-size:16px">Proxy-sphere collision and LCP response</text>
+<text x="1566" y="598" class="body" style="font-size:16px">produce simulated contact force F<tspan dy="5" font-size="12">contact</tspan><tspan dy="-5">​</tspan>.</text>
+<rect x="1478" y="665" width="467" height="121" rx="17" fill="white" stroke="#dbe5ee" stroke-width="2.5" />
+<text x="1566" y="703" class="head" style="font-size:20px">Local model update</text>
+<text x="1566" y="738" class="body" style="font-size:16px">Estimate K, B, x<tspan dy="5" font-size="12">proxy</tspan><tspan dy="-5">​</tspan> from contact information.</text>
+<text x="1566" y="767" class="body" style="font-size:16px">Contact loss: decay K; set B = 0.</text>
+<path d="M580 373H705" fill="none" stroke="#306fee" stroke-width="5" stroke-linecap="round" marker-end="url(#blue)" />
+<text x="644" y="331" class="head" style="font-size:17px" text-anchor="middle">Device state</text>
+<text x="596" y="355" class="small" style="font-size:15px">x<tspan dy="5" font-size="12">device</tspan><tspan dy="-5">​</tspan>, ẋ<tspan dy="5" font-size="12">device</tspan><tspan dy="-5">​</tspan></text>
+<path d="M1298 373H1430" fill="none" stroke="#306fee" stroke-width="5" stroke-linecap="round" marker-end="url(#blue)" />
+<text x="1367" y="331" class="head" style="font-size:17px" text-anchor="middle">USB serial</text>
+<text x="1367" y="355" class="small" style="font-size:15px" text-anchor="middle">device state</text>
+<path d="M1007 449V479" fill="none" stroke="#306fee" stroke-width="5" stroke-linecap="round" marker-end="url(#blue)" />
+<text x="1026" y="474" class="body" style="font-size:16px">local state</text>
+<path d="M1007 623V650" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="1026" y="648" class="body" style="font-size:16px">force command</text>
+<path d="M1710 455V485" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="1730" y="480" class="body" style="font-size:16px">F<tspan dy="5" font-size="12">contact</tspan><tspan dy="-5">​</tspan></text>
+<path d="M1710 625V654" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="1730" y="649" class="body" style="font-size:16px">contact information</text>
+<path d="M1441 724H1310" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="1325" y="677" class="head" style="font-size:17px">K, B, x<tspan dy="5" font-size="12">proxy</tspan><tspan dy="-5">​</tspan></text>
+<text x="1370" y="702" class="small" style="font-size:15px" text-anchor="middle">100–200 Hz update</text>
+<path d="M716 724H591" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="647" y="661" class="head" style="font-size:16px" text-anchor="middle">Motor torque</text>
+<text x="606" y="684" class="head" style="font-size:16px">command</text>
+<text x="647" y="709" class="small" style="font-size:15px" text-anchor="middle">&gt;1 kHz rendering</text>
+<path d="M321 603V500" fill="none" stroke="#ee7047" stroke-width="5" stroke-linecap="round" marker-end="url(#orange)" />
+<text x="343" y="554" class="body" style="font-size:16px">resistive feedback</text>
+<rect x="753" y="810" width="290" height="32" rx="16" fill="#eaf5ef" /><circle cx="771" cy="826" r="5" fill="#3c9d69" />
+<text x="785" y="832" class="small" style="font-size:16px">Inner loop: &gt;1 kHz</text>
+<rect x="1478" y="810" width="290" height="32" rx="16" fill="#eaf5ef" /><circle cx="1496" cy="826" r="5" fill="#3c9d69" />
+<text x="1510" y="832" class="small" style="font-size:16px">Outer loop: 100–200 Hz</text>
+<path d="M98 911H1945" stroke="#dbe5ee" stroke-width="2" />
+<text x="420" y="961" class="body" style="font-size:20px">● Simulation captures nonlinear tissue interaction</text>
+<text x="1070" y="961" class="body" style="font-size:20px">● Embedded control renders high-rate local feedback</text>
+<g transform="translate(121 239)"><circle r="33" fill="white" stroke="#c4d6ff" stroke-width="2.5" /><path d="M-14 -14L14 14M14 -14L-14 14" fill="none" stroke="#306fee" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(772 239)"><circle r="33" fill="white" stroke="#c4d6ff" stroke-width="2.5" /><path d="M-12 -12H12V12H-12Z M-7 -19V-12M0 -19V-12M7 -19V-12M-7 12V19M0 12V19M7 12V19M-19 -7H-12M-19 0H-12M-19 7H-12M12 -7H19M12 0H19M12 7H19" fill="none" stroke="#306fee" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(1497 239)"><circle r="33" fill="white" stroke="#c4d6ff" stroke-width="2.5" /><path d="M-18 -13H18V10H-18Z M0 10V18M-10 18H10" fill="none" stroke="#306fee" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(141 375)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M-16 -5H15M8 -12L15 -5L8 2M16 7H-15M-8 0L-15 7L-8 14" fill="none" stroke="#59748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(141 652)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M0 -16A16 16 0 1 1 -0.01 -16 M0 -23V-17M0 17V23M-23 0H-17M17 0H23M-16 -16L-12 -12M16 -16L12 -12M16 16L12 12M-16 16L-12 12" fill="none" stroke="#ee7047" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(796 375)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M-16 -5H15M8 -12L15 -5L8 2M16 7H-15M-8 0L-15 7L-8 14" fill="none" stroke="#59748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(796 538)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M-19 0H-10L-5 -14L5 14L11 0H19" fill="none" stroke="#59748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(796 712)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M-17 -17V17H18M-10 10Q0 -7 15 -12" fill="none" stroke="#59748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(1521 375)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M-15 -17L-3 1L-14 17M15 -17L3 1L14 17" fill="none" stroke="#59748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><g transform="translate(1521 545)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M0 -13A13 13 0 1 1 -.01 -13M0 -22V-17M0 17V22M-22 0H-17M17 0H22" fill="none" stroke="#7761d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle r="4" fill="#7761d9" /></g><g transform="translate(1521 714)"><circle r="25" fill="#eef4ff" stroke="none" stroke-width="2.5" /><path d="M-18 -16H18L5 0V15L-5 20V0Z" fill="none" stroke="#59748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g></svg>

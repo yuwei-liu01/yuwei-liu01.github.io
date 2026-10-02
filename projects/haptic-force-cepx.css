@@ -1,7 +1,13 @@
 /* Project-only additions; colors, navigation, and theme behavior come from the portfolio. */
 .haptic-page { padding-top: 3rem; }
-.haptic-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 2.5rem; align-items: center; margin: 1rem 0 2.5rem; }
-.haptic-page h1 { font-size: clamp(1.85rem, 3.3vw, 2.8rem); line-height: 1.18; }
+.haptic-hero { margin: 1rem 0 3.5rem; }
+.haptic-hero > div { text-align: center; }
+.haptic-subtitle { margin: 1.2rem auto; color: var(--text-strong); font-size: 1.15rem; }
+.haptic-hero .eyebrow { margin: 1.2rem auto .8rem; }
+.haptic-hero .project-overview { max-width: 800px; margin: 2.5rem auto; text-align: left; line-height: 1.8; }
+.haptic-page .section { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 2rem; margin: 0 0 1.25rem; }
+.haptic-page .section > p:not(.eyebrow) { max-width: none; }
+.haptic-page h1 { max-width: 1000px; margin: 0 auto; font-size: clamp(2rem, 4.2vw, 3.3rem); line-height: 1.15; }
 .haptic-page .section h2 { font-size: 1.4rem; margin: 0 0 1rem; }
 .haptic-page h3 { font-size: 1rem; margin-bottom: .6rem; }
 .haptic-page .section p + p { margin-top: .8rem; }
@@ -40,14 +46,53 @@ body.light .haptic-page .feedback-loop .loop-rate { color: #97501e; }
 .closing-link { margin-top: 2rem; }
 .haptic-page section, .haptic-page h2[id] { scroll-margin-top: 7rem; }
 @media (max-width: 800px) {
- .haptic-hero, .haptic-columns { grid-template-columns: 1fr; gap: 1.5rem; }
+ .haptic-columns { grid-template-columns: 1fr; gap: 1.5rem; }
  .snapshot-grid, .context-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
  .haptic-page { padding-top: 2rem; }
  .haptic-hero { margin-bottom: 1.5rem; }
+ .haptic-hero .project-overview { margin: 1.8rem auto; }
+ .haptic-page .section { padding: 1.25rem; border-radius: 12px; }
  .haptic-page section, .haptic-page h2[id] { scroll-margin-top: 9rem; }
  .demo-placeholder { aspect-ratio: auto; min-height: 240px; }
  .asset-placeholder { padding: 1.2rem; }
 }
 @media (max-width: 380px) {
  .snapshot-grid, .context-grid { grid-template-columns: 1fr; }
+}
+
+.hardware-analysis-figure { margin-top: 2rem; }
+.hardware-analysis-figure img { background: #fff; }
+
+.haptic-cover-video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 5; background: #4d5252; border-radius: 9px; }
+
+.simulation-row { display: grid; grid-template-columns: 1fr 1.15fr; gap: 2rem; align-items: center; }
+.simulation-row .haptic-figure { margin: 0; }
+.hardware-description { margin-top: 2.5rem; }
+.hardware-description p { max-width: none; }
+@media (max-width: 800px) {
+ .simulation-row { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+.haptic-section-nav { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; margin: 0 0 1.5rem; font-size: .85rem; }
+.haptic-section-nav a { color: var(--accent-soft); text-underline-offset: 3px; }
+
+.haptic-hero { margin-bottom: 1.5rem; }
+.hero-demonstration { margin: 0 0 2.5rem; }
+.hero-demonstration .haptic-figure { margin: 0; }
+.hero-demonstration .haptic-video { height: auto; }
+
+.haptic-page .haptic-hero .haptic-tutor { margin: 1rem auto; color: var(--accent-soft); font-size: .8rem; letter-spacing: .06em; text-align: center; }
+
+/* Scale the complete animation uniformly; recorded demonstration stays full width. */
+.haptic-hero .hero-figure { width: 100%; margin: 0 auto; }
+.hero-animation { aspect-ratio: 1344 / 314; background: #4d5252; border-radius: 9px; overflow: hidden; display: flex; justify-content: center; }
+.haptic-figure .hero-animation img { width: 75%; height: 100%; object-fit: contain; border-radius: 0; }
+.hero-demonstration .haptic-video { aspect-ratio: 2 / 1; height: auto; object-fit: cover; object-position: center; }
+
+/* Justify prose while preserving heading, metadata and caption alignment. */
+.haptic-page .project-overview,
+.haptic-page .section p:not(.eyebrow):not(.loop-rate) {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
