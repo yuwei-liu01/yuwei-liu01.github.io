@@ -622,8 +622,8 @@ li strong {
 
 /* Homepage featured research preview: text-only and non-interactive. */
 .featured-research {
-  margin-bottom: 1rem;
-  padding: clamp(1.15rem, 3vw, 1.6rem);
+  padding: 1.15rem;
+  min-width: 0;
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -636,7 +636,7 @@ li strong {
 }
 
 .featured-research h3 {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: 1.15rem;
   line-height: 1.4;
   margin-bottom: 0.55rem;
 }
