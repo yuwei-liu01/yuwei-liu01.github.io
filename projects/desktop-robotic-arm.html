@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Desktop robotic arm fabrication practice project details." />
-  <title>Desktop Robotic Arm Fabrication Practice | Yuwei Liu</title>
+  <meta name="description" content="This project explores the translation of parametric weaving patterns into robot toolpaths. A desktop robotic arm, a Grasshopper kinematic model, and servo control connect geometric path generation with physical weaving tests." />
+  <title>Robotic Weaving: Toolpath Generation &amp; Kinematic Control | Yuwei Liu</title>
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="robotic-weaving.css" />
 </head>
 <body class="dark">
   <header class="site-header">
@@ -24,59 +25,111 @@
     </div>
   </header>
 
-  <main class="container project-page">
-    <section class="section">
-      <a href="../index.html#projects" class="back-link">← Back to Projects</a>
-
-      <h1>Desktop Robotic Arm Fabrication Practice</h1>
-      <p class="project-overview">
-        This project documents hands-on fabrication and integration practice for a desktop robotic arm platform.
-        It combines mechanical assembly, component alignment, wiring, and functional testing into a practical build workflow.
-      </p>
-
-      <h2>Project Goal</h2>
-      <p>
-        Build a reliable small-scale robotic arm system that can be repeatedly assembled, calibrated, and tested,
-        while creating a reusable process for future prototyping projects.
-      </p>
-
-      <h2>What I Did / My Contribution</h2>
-      <ul>
-        <li>Planned assembly sequence and checked part compatibility before fabrication.</li>
-        <li>Completed mechanical assembly and joint alignment for improved motion consistency.</li>
-        <li>Handled actuator integration and wiring organization for maintainability.</li>
-        <li>Ran calibration and repeatability checks, then documented troubleshooting notes.</li>
-      </ul>
-
-      <h2>Methods / Workflow</h2>
-      <ol>
-        <li>Prepare bill of materials and fabrication/assembly checklist.</li>
-        <li>Assemble structure and transmission elements with tolerance checks.</li>
-        <li>Integrate actuators and electronics, then verify safe operation.</li>
-        <li>Perform calibration, motion tests, and issue tracking for refinement.</li>
-      </ol>
-
-      <h2>Images / Videos / Simulation</h2>
-      <div class="media-placeholder" role="img" aria-label="Desktop robotic arm build media placeholder">
-        Add fabrication photos, assembly steps, or bench-test videos here.
-      </div>
-
-      <h2>Results / Takeaways</h2>
-      <p>
-        The completed platform provided a stable foundation for rapid motion and control experiments.
-        The most important takeaway was that good mechanical alignment and cable management directly improve testing efficiency.
-      </p>
-
-      <h2>Tools / Skills</h2>
-      <p>Fabrication, Mechanical Integration, Assembly Planning, Calibration, Testing, Troubleshooting</p>
-
-      <h2>Optional Links</h2>
-      <ul>
-        <li><a href="#" aria-label="Optional CAD file placeholder">CAD file placeholder</a></li>
-        <li><a href="#" aria-label="Optional build log placeholder">Build log placeholder</a></li>
-      </ul>
-    </section>
-  </main>
+<main class="container project-page weaving-page">
+  <a href="../projects.html" class="back-link">← All Projects</a>
+  <header class="project-intro" id="overview" aria-labelledby="project-title">
+    <div class="weaving-hero-heading">
+      <h1 id="project-title">Robotic Weaving: Toolpath Generation &amp; Kinematic Control</h1>
+      <p class="weaving-subtitle">Parametric weaving patterns and desktop robotic fabrication</p>
+      <p class="eyebrow">Fall 2024 · Individual project</p>
+      <p class="eyebrow">Instructor: TENG TENG</p>
+    </div>
+    <p class="project-overview">This project explores the translation of parametric weaving patterns into robot toolpaths. A desktop robotic arm, a Grasshopper kinematic model, and servo control connect geometric path generation with physical weaving tests.</p>
+    <figure class="weaving-hero-figure">
+      <img src="../assets/projects/robotic-weaving/weaving-hero-wide.png" alt="Desktop robotic arm and threaded weaving frame on a tabletop" width="1916" height="821" fetchpriority="high" decoding="async" />
+      <figcaption>Desktop robotic arm and a frame-weaving test.</figcaption>
+    </figure>
+  </header>
+  <nav class="weaving-section-nav" aria-label="Project sections">
+    <a href="#overview">Overview</a>
+    <a href="#system">System Overview</a>
+    <a href="#toolpaths">Three Weaving Toolpaths</a>
+    <a href="#kinematics">Kinematic Model</a>
+    <a href="#hardware">Hardware &amp; Control</a>
+    <a href="#execution">Robot Execution</a>
+  </nav>
+  <section class="section" id="system" aria-labelledby="system-title">
+    <p class="eyebrow section-number">01 / SYSTEM</p>
+    <h2 id="system-title">System Overview</h2>
+    <figure class="weaving-system-figure">
+      <a href="../assets/projects/robotic-weaving/system-overview.png" target="_blank" rel="noopener" aria-label="Open high-resolution robotic weaving system overview">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/projects/robotic-weaving/system-overview-mobile.svg" />
+          <img src="../assets/projects/robotic-weaving/system-overview.svg" alt="Weaving targets and the robot kinematic model feed joint-angle calculation, followed by serial control, weaving tests and observations. Servo initialization separately supports execution." loading="lazy" />
+        </picture>
+      </a>
+      <figcaption>Task targets and the robot model determine joint commands. The dashed line shows hardware readiness supporting execution. <a href="../assets/projects/robotic-weaving/system-overview.svg" target="_blank" rel="noopener">Editable SVG</a> · <a href="../assets/projects/robotic-weaving/system-overview.png" target="_blank" rel="noopener">High-resolution PNG</a></figcaption>
+    </figure>
+    <p>Boundary connections become ordered target points in Grasshopper. The kinematic model relates tool targets to joint angles, and a serial interface sends commands to the control board. Source definitions document point ordering and serial transmission; photographs document weaving tests on a square frame.</p>
+  </section>
+  <section class="section toolpath-section" id="toolpaths" aria-labelledby="paths-title">
+    <p class="eyebrow section-number">02 / TOOLPATHS</p>
+    <h2 id="paths-title">Three Weaving Toolpaths</h2>
+    <p>Three weaving patterns define different connections between boundary anchors. An ordered sequence of anchor visits determines how the tool moves and how the thread pattern develops.</p>
+    <div class="animation-toolbar" aria-label="Shared animation controls">
+      <button id="play-all" disabled>Play all in sync</button><button id="pause-all" disabled>Pause all</button><button id="reset-all" disabled>Reset all</button>
+      <label>Speed <select id="speed" disabled><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+      <label>View <select id="pattern-view" disabled><option value="all">Compare all</option><option value="I">Pattern I</option><option value="II">Pattern II</option><option value="III">Pattern III</option></select></label>
+    </div>
+    <p class="animation-note">Full patterns appear in gray; playback follows one selected group. Reconstructed visualization: I–II use illustrative order; III follows the marked sequence. No lifting or anchor wrapping is modeled.</p>
+    <p class="legend"><span class="legend-thread">━ Thread</span><span class="legend-travel">┄ Reposition</span><span class="legend-tool">● Tool</span><span class="legend-target">◎ Target</span><span>→ Direction</span></p>
+    <p id="animation-error" role="alert" hidden></p>
+    <noscript><p>Enable JavaScript to play the animations. The original pattern drawings remain available below.</p></noscript>
+    <div class="pattern-grid" id="pattern-grid">
+<article class="pattern-panel" data-pattern="I" aria-labelledby="pattern-I-title">
+      <h3 id="pattern-I-title">Weaving Pattern I</h3>
+      <figure class="pattern-original"><a href="../assets/projects/robotic-weaving/pattern-I.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/pattern-I.jpg" alt="Original drawing of weaving pattern I" loading="lazy" /></a><figcaption>Original drawing · Click to enlarge.</figcaption></figure>
+      <p class="pattern-rule">Alternating strands connect the base and sloping sides.</p>
+      <div class="animation-mount"></div>
+    </article><article class="pattern-panel" data-pattern="II" aria-labelledby="pattern-II-title">
+      <h3 id="pattern-II-title">Weaving Pattern II</h3>
+      <figure class="pattern-original"><a href="../assets/projects/robotic-weaving/pattern-II.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/pattern-II.jpg" alt="Original drawing of weaving pattern II" loading="lazy" /></a><figcaption>Original drawing · Click to enlarge.</figcaption></figure>
+      <p class="pattern-rule">Paired fans connect the top and side edges.</p>
+      <div class="animation-mount"></div>
+    </article><article class="pattern-panel" data-pattern="III" aria-labelledby="pattern-III-title">
+      <h3 id="pattern-III-title">Weaving Pattern III</h3>
+      <figure class="pattern-original"><a href="../assets/projects/robotic-weaving/pattern-III-landscape.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/pattern-III-landscape.svg" alt="Original combined Pattern III drawing containing multiple crossing families" loading="lazy" /></a><figcaption>Original drawing · Click to enlarge.</figcaption></figure>
+      <p class="pattern-rule">Crossed strands follow the marked anchor sequence.</p>
+      <div class="animation-mount"></div>
+    </article></div><p class="animation-note">The playback shows a tool endpoint in a normalized 2D frame. Speed controls presentation timing; this is not a physical simulation or a robot motion validation.</p>
+  </section>
+  <section class="section" id="weaving-3d" aria-labelledby="preview-title">
+    <p class="eyebrow section-number">INTERACTIVE / KINEMATIC PREVIEW</p>
+    <h2 id="preview-title">3D Weaving Motion</h2>
+    <p>A simplified arm follows the marked Pattern III sequence. Link lengths come from the Rhino reference geometry; frame placement and the vertical tool pose are illustrative.</p>
+    <canvas tabindex="0" aria-label="Three-dimensional arm motion preview. Drag or use arrow keys to orbit; scroll to zoom."></canvas>
+    <div class="animation-toolbar">
+      <button data-play disabled>Play</button><button data-reset disabled>Reset</button><button data-home disabled>Reset view</button>
+      <label>Speed <select data-speed disabled><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+      <label><input type="checkbox" data-reference checked disabled> Full pattern</label>
+    </div>
+    <label for="motion-progress">Motion progress</label><input id="motion-progress" data-progress type="range" min="0" max="1000" value="0" disabled>
+    <output aria-live="off">Loading 3D preview…</output>
+    <p data-angles class="animation-note"></p>
+    <p class="animation-note">Drag to orbit · Scroll to zoom · Orange: TCP · Purple: next anchor · Teal: completed thread. Geometric base, shoulder, elbow and wrist motion only. No collision, thread tension, anchor wrapping or physical execution validation.</p>
+  </section>
+  <section class="section" id="kinematics" aria-labelledby="kinematic-title">
+    <p class="eyebrow section-number">03 / KINEMATICS</p>
+    <h2 id="kinematic-title">Kinematic Model</h2>
+    <p>The kinematic model represents the arm as connected links and joints. Target tool poses are expressed relative to the robot base and used to calculate joint configurations.</p>
+    <div class="kinematic-grid"><figure class=""><a href="../assets/projects/robotic-weaving/base-frame.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/base-frame.jpg" alt="Original diagram of the fixed robot base coordinate frame" loading="lazy" /></a><figcaption>Robot base frame · fixed reference for target coordinates.</figcaption></figure><figure class=""><a href="../assets/projects/robotic-weaving/tool-frame.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/tool-frame.jpg" alt="Original wrist and tool coordinate systems with joint-angle annotations" loading="lazy" /></a><figcaption>Tool center point (TCP) · position at the threading tool, with a local orientation frame.</figcaption></figure><figure class=""><a href="../assets/projects/robotic-weaving/tcp-target.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/tcp-target.jpg" alt="Original base point and target tool plane diagram" loading="lazy" /></a><figcaption>Target position and orientation · a point locates the TCP; the target plane specifies orientation.</figcaption></figure><figure class=""><a href="../assets/projects/robotic-weaving/ik-circles.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/ik-circles.jpg" alt="Original geometric inverse-kinematics circle construction" loading="lazy" /></a><figcaption>Link geometry · circle intersections illustrate candidate arm configurations.</figcaption></figure><figure class=""><a href="../assets/projects/robotic-weaving/joint-angles.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/joint-angles.jpg" alt="Original linked arm diagram showing shoulder and elbow angles" loading="lazy" /></a><figcaption>Joint-angle calculation · link directions determine shoulder and elbow angles.</figcaption></figure><figure class=""><a href="../assets/projects/robotic-weaving/kinematic-links.jpg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/kinematic-links.jpg" alt="Original connected links and target tool plane" loading="lazy" /></a><figcaption>Connected links · the model relates the base, arm, and tool pose.</figcaption></figure></div>
+    <p>The Grasshopper definition contains curve intersections, planar projections, and vector-angle operations, alongside point-ordering scripts. These support a geometric kinematic workflow; a complete six-degree-of-freedom IK solver and its accuracy have not been independently verified.</p>
+  </section>
+  <section class="section" id="hardware" aria-labelledby="hardware-title">
+    <p class="eyebrow section-number">04 / HARDWARE &amp; CONTROL</p>
+    <h2 id="hardware-title">Hardware &amp; Control</h2>
+    <p>A threading tool guides the material across the frame. Joint targets are translated into servo commands through the control board.</p>
+    <figure class="hardware-control-figure">
+      <a href="../assets/projects/robotic-weaving/hardware-control.svg?v=needle-spacing-13" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/hardware-control.svg?v=needle-spacing-13" alt="Exploded desktop arm, threading needle, and controller with computer and power connections" width="1220" height="1120" loading="lazy" /></a>
+    </figure>
+  </section>
+  <section class="section" id="execution" aria-labelledby="execution-title">
+    <p class="eyebrow section-number">05 / EXECUTION</p>
+    <h2 id="execution-title">Robot Execution</h2>
+    <p>Photographs record the desktop arm working over a square weaving frame, with the Grasshopper model visible on the connected computer. The sequence shows thread accumulating across the frame and a resulting woven sample; it does not establish physical execution of all three patterns.</p>
+    <div class="execution-grid execution-sequence"><figure><a href="../assets/projects/robotic-weaving/execution-sequence-01-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-01-cropped.svg" alt="Robotic weaving test, stage 1 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-02-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-02-cropped.svg" alt="Robotic weaving test, stage 2 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-03-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-03-cropped.svg" alt="Robotic weaving test, stage 3 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-04-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-04-cropped.svg" alt="Robotic weaving test, stage 4 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-05-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-05-cropped.svg" alt="Robotic weaving test, stage 5 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-06-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-06-cropped.svg" alt="Robotic weaving test, stage 6 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-07-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-07-cropped.svg" alt="Robotic weaving test, stage 7 of 8" width="3552" height="2268" loading="lazy" /></a></figure><figure><a href="../assets/projects/robotic-weaving/execution-sequence-08-cropped.svg" target="_blank" rel="noopener"><img src="../assets/projects/robotic-weaving/execution-sequence-08-cropped.svg" alt="Robotic weaving test, stage 8 of 8" width="3552" height="2268" loading="lazy" /></a></figure></div>
+  </section>
+</main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Yuwei Liu</p>
@@ -85,5 +138,7 @@
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
   <script src="../script.js"></script>
+  <script type="module" src="../assets/projects/robotic-weaving/toolpath-player.js?v=full-reference-2"></script>
+  <script type="module" src="../assets/projects/robotic-weaving/preview-3d/viewer.js"></script>
 </body>
 </html>

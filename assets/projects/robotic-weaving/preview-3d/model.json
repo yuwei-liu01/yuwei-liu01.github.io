@@ -1,0 +1,18 @@
+{
+  "status": "Simplified links using Rhino reference lengths; frame placement and vertical tool pose are illustrative.",
+  "baseHeight": 85,
+  "upperArm": 107,
+  "forearm": 190,
+  "toolLength": 50,
+  "frameOrigin": [
+    190,
+    -55,
+    18
+  ],
+  "frameSize": [
+    95,
+    110
+  ],
+  "durationSeconds": 32,
+  "source": "0711/roboticArm.3dm, layer 00-ref-L; reference lengths 85, 107, 190, 50 mm"
+}
