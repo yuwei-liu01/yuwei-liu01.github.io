@@ -1,7 +1,7 @@
 import {solve,mapPoint} from './kinematics.js';
 const host=document.querySelector('#weaving-3d');
 async function init(){
- const [model,data]=await Promise.all([fetch(new URL('./model.json',import.meta.url)).then(r=>r.json()),fetch(new URL('../toolpaths.json?v=full-reference-2',import.meta.url),{cache:'no-store'}).then(r=>r.json())]);
+ const [model,data]=await Promise.all([fetch(new URL('./model.json',import.meta.url)).then(r=>r.json()),fetch(new URL('../toolpaths.json?v=corrected-anchors-3',import.meta.url),{cache:'no-store'}).then(r=>r.json())]);
  const pattern=data.patterns.find(p=>p.id==='III');
  const pts=pattern.anchors.map(a=>mapPoint(a.point,pattern,model));
  const canvas=host.querySelector('canvas'),ctx=canvas.getContext('2d'),play=host.querySelector('[data-play]'),slider=host.querySelector('[data-progress]'),status=host.querySelector('output');

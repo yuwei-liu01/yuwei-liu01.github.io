@@ -934,14 +934,14 @@
         {
           "id": "(3,5)",
           "point": [
-            160.0,
+            149.634,
             257.366
           ]
         },
         {
           "id": "(3,6)",
           "point": [
-            170.817,
+            160.0,
             257.366
           ]
         }
@@ -1067,7 +1067,7 @@
           "kind": "weave"
         }
       ],
-      "showAnchorLabels": true,
+      "showAnchorLabels": false,
       "visitOrder": [
         "(0,6)",
         "(3,6)",

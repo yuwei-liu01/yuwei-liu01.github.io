@@ -146,7 +146,7 @@ function showPatterns(id) {
   document.querySelector('#pattern-grid').classList.toggle('single', id !== 'all');
 }
 async function init() {
-  const response = await fetch(new URL('./toolpaths.json?v=full-reference-2', import.meta.url), { cache: 'no-store' });
+  const response = await fetch(new URL('./toolpaths.json?v=corrected-anchors-3', import.meta.url), { cache: 'no-store' });
   if (!response.ok) throw new Error('Pattern data could not be loaded.');
   const data = await response.json();
   data.patterns.forEach(pattern => {
