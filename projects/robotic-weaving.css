@@ -450,3 +450,7 @@ body.light .legend-target {
 .execution-sequence img { width: 100%; aspect-ratio: 3552 / 2268; height: auto; object-fit: contain; }
 
 .rviz-recording { display: block; width: 100%; max-width: 882px; height: auto; margin: 1.25rem auto; border-radius: 12px; background: #f2f5f8; }
+
+.kinematic-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.kinematic-steps img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+@media (max-width: 800px) { .kinematic-steps { grid-template-columns: 1fr; } }
