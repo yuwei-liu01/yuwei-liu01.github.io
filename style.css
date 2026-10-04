@@ -619,3 +619,52 @@ li strong {
 }
 
 .card-image img.haptic-card-cover { border-radius: 7px; }
+
+/* Homepage featured research preview: text-only and non-interactive. */
+.featured-research {
+  margin-bottom: 1rem;
+  padding: clamp(1.15rem, 3vw, 1.6rem);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.featured-research .featured-research-eyebrow {
+  margin-bottom: 0.55rem;
+  color: var(--accent-soft);
+  font-size: 0.88rem;
+}
+
+.featured-research h3 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.4;
+  margin-bottom: 0.55rem;
+}
+
+.featured-research .featured-research-subtitle {
+  color: var(--text-strong);
+  font-size: 0.92rem;
+}
+
+.featured-research .featured-research-description {
+  margin-top: 0.8rem;
+  max-width: 85ch;
+  line-height: 1.75;
+}
+
+.featured-research .featured-research-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+}
+
+.featured-research .featured-research-status {
+  color: var(--text-strong);
+  font-weight: 600;
+}
