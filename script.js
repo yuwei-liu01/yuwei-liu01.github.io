@@ -21,9 +21,6 @@ if (backToTopButton) {
   dialog.className = 'image-viewer';
   dialog.setAttribute('aria-label', 'Image preview');
   dialog.innerHTML = `<div class="image-viewer-toolbar">
-    <button type="button" data-action="out" aria-label="Zoom out">−</button>
-    <button type="button" data-action="reset">Fit</button>
-    <button type="button" data-action="in" aria-label="Zoom in">+</button>
     <button type="button" data-action="close" aria-label="Close image preview">×</button>
   </div><div class="image-viewer-stage"><img draggable="false" alt=""></div>
   <p class="image-viewer-hint" role="status">Scroll to zoom · Drag to move · Esc to close</p>`;
@@ -69,9 +66,6 @@ if (backToTopButton) {
   dialog.addEventListener('click', event => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'close') dialog.close();
-    if (action === 'reset') reset();
-    if (action === 'in') zoom(1.25);
-    if (action === 'out') zoom(0.8);
     if (event.target === dialog) dialog.close();
   });
   stage.addEventListener('wheel', event => {
