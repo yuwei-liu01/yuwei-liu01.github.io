@@ -1,21 +1,6 @@
-/*
-  Academic portfolio theme tokens.
-  Dark theme is default. Light theme activates with body.light.
-*/
+/* Site-wide light theme. */
 :root {
-  --bg: #07090d;
-  --surface: #0d1117;
-  --surface-2: #101722;
-  --text: #e6ebf3;
-  --text-strong: #c3ccda;
-  --muted: #a8b0bd;
-  --line: #1c2532;
-  --accent: #5f8db8;
-  --accent-soft: #89a9c8;
-  --shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
-}
-
-body.light {
+  color-scheme: light;
   --bg: #f4f6f9;
   --surface: #ffffff;
   --surface-2: #f7f9fc;
@@ -100,15 +85,6 @@ body {
   scroll-margin-top: 6rem;
 }
 
-.toggle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
-  cursor: pointer;
-}
 
 .hero {
   padding: 6.6rem 0 3.8rem;
