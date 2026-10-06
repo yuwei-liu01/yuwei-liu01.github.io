@@ -98,3 +98,10 @@ if (backToTopButton) {
   for (const name of ['pointerup','pointercancel','lostpointercapture']) stage.addEventListener(name,event=>pointers.delete(event.pointerId));
   window.addEventListener('resize', () => { if (dialog.open) reset(); });
 })();
+
+// Hide the native save-video menu while retaining playback controls.
+document.addEventListener('contextmenu', (event) => {
+  if (event.target instanceof Element && event.target.closest('video')) {
+    event.preventDefault();
+  }
+});
