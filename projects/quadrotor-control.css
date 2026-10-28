@@ -2,3 +2,8 @@
 
 /* Match the portfolio navigation while keeping the approved project layout. */
 header{position:sticky;top:0;z-index:50;background:#f4f6f9ed;backdrop-filter:blur(6px)}.header-inner{width:92%;max-width:1120px;min-height:72px;padding:0}.brand{font-size:1.05rem}.top-nav{gap:1rem}.top-nav a{font-size:.92rem}html{scroll-padding-top:92px}@media(max-width:650px){.header-inner{flex-wrap:wrap;padding:12px 0;gap:8px}.top-nav{flex-wrap:wrap;gap:8px 14px}.top-nav a{font-size:12px}}
+
+/* Shared portfolio dimensions and type scale, matching the assembly project. */
+body{font-family:"Inter","Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.75;letter-spacing:.01em}
+main,footer{width:min(1120px,92%);max-width:none}.back{font-size:16px;margin:48px 0 32px}.hero{max-width:none}.hero h1{font-size:clamp(2rem,4.1vw,3.2rem);line-height:1.16;letter-spacing:.01em;font-weight:700;margin:0 0 16px}.subtitle{font-size:1.1rem;margin-bottom:16px}.metadata{font-size:.86rem;margin:0 0 14px}.synopsis{max-width:800px;font-size:1rem;margin:32px auto 40px}.card{padding:1.95rem}.card h2{font-size:1.4rem}.card h3,.iteration h3{font-size:1.25rem}figcaption,.caption{font-size:.85rem}.section-nav a,summary,details p,.small,.note,table,.equation{font-size:.85rem}.kicker,.iteration-label{font-size:.8rem}.stage-number,.result-item .label{font-size:.75rem}.stage-overview h2{font-size:1.1rem}.stage-overview p,.flow-box p,.architecture-subtitle,.feedback,.chips span,.result-item p{font-size:.85rem}.banner-title{font-size:.85rem}
+@media(max-width:650px){main,footer{width:92%;max-width:none}body{font-size:16px}.back{margin-top:32px}.hero h1{font-size:2rem}.synopsis{font-size:1rem}.card{padding:23px 19px}}
